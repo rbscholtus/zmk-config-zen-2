@@ -28,6 +28,16 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        switch {
+            bindings = <&tog 1>;
+            key-positions = <0 1 2>;
+            layers = <0 1>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -41,14 +51,14 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB    &kp Q  &kp W  &kp E     &kp R  &kp T          &kp Y        &kp U  &kp I      &kp O    &kp P     &kp BSPC
-&kp LCTRL  &kp A  &kp S  &kp D     &kp F  &kp G          &kp H        &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
-&td0       &kp Z  &kp X  &kp C     &kp V  &kp B          &kp N        &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
-                         &kp LGUI  &mo 1  &lt 3 SPACE    &lt 3 ENTER  &mo 2  &kp RALT
+&kp ESCAPE  &kp Q  &kp W  &kp E               &kp R                &kp T                   &kp Y        &kp U            &kp I          &kp O    &kp P     &kp MINUS
+&kp TAB     &kp A  &kp S  &kp D               &kp F                &kp G                   &kp H        &kp J            &kp K          &kp L    &kp SEMI  &kp SQT
+&kp LCTRL   &kp Z  &kp X  &kp C               &kp V                &kp B                   &kp N        &kp M            &kp COMMA      &kp DOT  &kp FSLH  &kp EQUAL
+                          &mt LEFT_ALT ENTER  &mt LEFT_GUI DELETE  &mt LEFT_SHIFT SPACE    &lt 2 ENTER  &lt 3 BACKSPACE  &lt 4 AT_SIGN
             >;
         };
 
-        lower_layer {
+        input_layer {
             display-name = "NUMBER";
 
             // -----------------------------------------------------------------------------------------
@@ -63,9 +73,11 @@
 &trans  &rgb_ug RGB_OFF  &rgb_ug RGB_ON  &trans        &trans        &rgb_ug RGB_EFF    &rgb_ug RGB_EFR  &rgb_ug RGB_SPI  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &kp END   &kp PG_DN
                                          &trans        &trans        &trans             &kp INS          &kp DEL          &trans
             >;
+
+            label = "GRAPHITE";
         };
 
-        raise_layer {
+        symbol_layer {
             display-name = "SYMBOL";
 
             // -----------------------------------------------------------------------------------------
@@ -82,14 +94,27 @@
             >;
         };
 
-        layer_3 {
-            display-name = "Fn";
+        navigation_layer {
+            display-name = "nv";
             bindings = <
-&trans  &kp F1      &kp F2  &kp F3  &kp F4      &kp F5         &kp F6       &kp F7  &kp F8  &kp F9  &kp F10          &kp F11
-&trans  &bt BT_CLR  &trans  &trans  &sys_reset  &bootloader    &bootloader  &trans  &trans  &trans  &kp PRINTSCREEN  &kp F12
-&trans  &trans      &trans  &trans  &trans      &trans         &trans       &trans  &trans  &trans  &kp SCROLLLOCK   &kp PAUSE_BREAK
-                            &trans  &trans      &trans         &trans       &trans  &trans
+&trans  &kp F1      &kp F2  &kp F3  &kp F4      &kp F5         &kp F6       &kp F7    &kp UP_ARROW  &kp F9     &kp F10          &kp F11
+&trans  &bt BT_CLR  &trans  &trans  &sys_reset  &bootloader    &bootloader  &kp LEFT  &kp DOWN      &kp RIGHT  &kp PRINTSCREEN  &kp F12
+&trans  &trans      &trans  &trans  &trans      &trans         &trans       &trans    &trans        &trans     &kp SCROLLLOCK   &kp PAUSE_BREAK
+                            &trans  &trans      &trans         &trans       &trans    &trans
             >;
+
+            label = "NAV";
+        };
+
+        function_layer {
+            bindings = <
+&bt BT_CLR       &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4       &none  &kp F9  &kp F10  &kp F11  &kp F12  &none
+&rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI  &rgb_ug RGB_SPI  &rgb_ug RGB_ON   &rgb_ug RGB_EFF    &none  &kp F5  &kp F6   &kp F7   &kp F8   &none
+&none            &none            &none            &none            &rgb_ug RGB_OFF  &none              &none  &kp F1  &kp F2   &kp F3   &kp F4   &none
+                                                   &none            &none            &none              &none  &none   &none
+            >;
+
+            label = "FUNCTION";
         };
     };
 };
