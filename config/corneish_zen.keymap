@@ -95,10 +95,10 @@
         navigation_layer {
             display-name = "NAV";
             bindings = <
-&kp ESCAPE  &msc SCRL_UP    &mkp MB1         &mmv MOVE_Y 300  &mkp MB2         &mkp MB3        &none   &kp LA(LEFT)  &kp UP_ARROW  &kp LA(RIGHT)  &none  &none
-&kp TAB     &msc SCRL_DOWN  &mmv MOVE_X 200  &mmv MOVE_Y 500  &mmv MOVE_X 400  &none           &none   &kp LEFT      &kp DOWN      &kp RIGHT      &none  &sys_reset
-&trans      &none           &sys_reset       &bootloader      &out OUT_USB     &out OUT_BLE    &none   &kp LG(LEFT)  &kp LA(DOWN)  &kp LG(RIGHT)  &none  &bootloader
-                                             &trans           &trans           &trans          &trans  &trans        &trans
+&kp ESCAPE  &msc SCRL_UP    &mkp MB1        &mmv MOVE_UP    &mkp MB2         &mkp MB3        &none   &kp LA(LEFT)  &kp UP_ARROW  &kp LA(RIGHT)  &none  &none
+&kp TAB     &msc SCRL_DOWN  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none           &none   &kp LEFT      &kp DOWN      &kp RIGHT      &none  &sys_reset
+&trans      &none           &sys_reset      &bootloader     &out OUT_USB     &out OUT_BLE    &none   &kp LG(LEFT)  &kp LA(DOWN)  &kp LG(RIGHT)  &none  &bootloader
+                                            &trans          &trans           &trans          &trans  &trans        &trans
             >;
 
             label = "NAV";
