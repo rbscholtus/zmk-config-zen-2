@@ -39,6 +39,7 @@
                 &kp UNDERSCORE  // Sends `_` when Shift is held
             >;
             mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         // Behavior: Send " without shift, - with shift
         dquote_dash: doublequote_dash {
@@ -49,6 +50,7 @@
                 &kp MINUS // Sends - with Shift
             >;
             mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         // Behavior: Send / without shift, < with shift
@@ -60,6 +62,7 @@
                 &kp LT     // Sends < with Shift
             >;
             mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         // Behavior: Send , without shift, ? with shift
@@ -71,6 +74,7 @@
                 &kp QUESTION  // Sends ? with Shift
             >;
             mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         // Behavior: Send ) without shift, = with shift
@@ -82,6 +86,7 @@
                 &kp EQUAL   // Sends = with Shift
             >;
             mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
 
