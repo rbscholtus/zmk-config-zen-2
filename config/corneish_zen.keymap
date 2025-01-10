@@ -30,12 +30,58 @@
             bindings = <&kp LEFT_SHIFT>, <&kp CAPS>;
         };
 
+        // Behavior: Send ' without shift, _ with shift
         quote_underscore: behavior {
             compatible = "zmk,behavior-keymap";
             label = "Quote_Underscore";
+            #binding-cells = <1>;
             bindings = <
                 &kp QUOT  // Sends `'` when pressed
                 &kp UNDERSCORE  // Sends `_` when Shift is held
+            >;
+        };
+
+        // Behavior: Send " without shift, - with shift
+        doublequote_dash: behavior {
+            compatible = "zmk,behavior-keymap";
+            label = "DoubleQuote_Dash";
+            #binding-cells = <1>;
+            bindings = <
+                &kp DQT   // Sends " without Shift
+                &kp MINUS // Sends - with Shift
+            >;
+        };
+
+        // Behavior: Send / without shift, < with shift
+        slash_less: behavior {
+            compatible = "zmk,behavior-keymap";
+            label = "Slash_Less";
+            #binding-cells = <1>;
+            bindings = <
+                &kp SLASH  // Sends / without Shift
+                &kp LT     // Sends < with Shift
+            >;
+        };
+
+        // Behavior: Send , without shift, ? with shift
+        comma_question: behavior {
+            compatible = "zmk,behavior-keymap";
+            label = "Comma_Question";
+            #binding-cells = <1>;
+            bindings = <
+                &kp COMMA  // Sends , without Shift
+                &kp QUESTION  // Sends ? with Shift
+            >;
+        };
+
+        // Behavior: Send ) without shift, = with shift
+        paren_equal: behavior {
+            compatible = "zmk,behavior-keymap";
+            label = "Paren_Equal";
+            #binding-cells = <1>;
+            bindings = <
+                &kp RPAREN  // Sends ) without Shift
+                &kp EQUAL   // Sends = with Shift
             >;
         };
     };
