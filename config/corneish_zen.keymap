@@ -80,7 +80,7 @@
             label = "Paren_Equal";
             #binding-cells = <0>;
             bindings = <
-                &kp RPAREN  // Sends ) without Shift
+                &kp RIGHT_PARENTHESIS  // Sends ) without Shift
                 &kp EQUAL   // Sends = with Shift
             >;
         };
