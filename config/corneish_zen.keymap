@@ -31,58 +31,14 @@
         };
 
         // Behavior: Send ' without shift, _ with shift
-        quote_underscore: quote_underscore {
-            compatible = "zmk,behavior-keymap";
-            label = "Quote_Underscore";
+        quote_uscore: quote_underscore {
+            compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <
                 &kp QUOT  // Sends `'` when pressed
                 &kp UNDERSCORE  // Sends `_` when Shift is held
             >;
-        };
-
-        // Behavior: Send " without shift, - with shift
-        doublequote_dash: doublequote_dash {
-            compatible = "zmk,behavior-keymap";
-            label = "DoubleQuote_Dash";
-            #binding-cells = <0>;
-            bindings = <
-                &kp DQT   // Sends " without Shift
-                &kp MINUS // Sends - with Shift
-            >;
-        };
-
-        // Behavior: Send / without shift, < with shift
-        slash_less: slash_less {
-            compatible = "zmk,behavior-keymap";
-            label = "Slash_Less";
-            #binding-cells = <0>;
-            bindings = <
-                &kp SLASH  // Sends / without Shift
-                &kp LT     // Sends < with Shift
-            >;
-        };
-
-        // Behavior: Send , without shift, ? with shift
-        comma_question: comma_question {
-            compatible = "zmk,behavior-keymap";
-            label = "Comma_Question";
-            #binding-cells = <0>;
-            bindings = <
-                &kp COMMA  // Sends , without Shift
-                &kp QUESTION  // Sends ? with Shift
-            >;
-        };
-
-        // Behavior: Send ) without shift, = with shift
-        paren_equal: paren_equal {
-            compatible = "zmk,behavior-keymap";
-            label = "Paren_Equal";
-            #binding-cells = <0>;
-            bindings = <
-                &kp RIGHT_PARENTHESIS  // Sends ) without Shift
-                &kp EQUAL   // Sends = with Shift
-            >;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
 
@@ -120,10 +76,10 @@
         input_layer2 {
             display-name = "GRAPHITE";
             bindings = <
-&trans  &kp B  &kp L  &kp D   &kp W   &kp Z     &quote_underscore  &kp F   &kp O    &kp U      &kp J     &kp SEMI
-&trans  &kp N  &kp R  &kp T   &kp S   &kp G     &kp Y              &kp H   &kp A    &kp E      &kp I     &kp COMMA
-&trans  &kp Q  &kp X  &kp M   &kp C   &kp V     &kp K              &kp P   &kp DOT  &kp MINUS  &kp FSLH  &kp EQUAL
-                      &trans  &trans  &trans    &trans             &trans  &trans
+&trans  &kp B  &kp L  &kp D   &kp W   &kp Z     &quote_uscore  &kp F   &kp O    &kp U      &kp J     &kp SEMI
+&trans  &kp N  &kp R  &kp T   &kp S   &kp G     &kp Y          &kp H   &kp A    &kp E      &kp I     &kp COMMA
+&trans  &kp Q  &kp X  &kp M   &kp C   &kp V     &kp K          &kp P   &kp DOT  &kp MINUS  &kp FSLH  &kp EQUAL
+                      &trans  &trans  &trans    &trans         &trans  &trans
             >;
 
             label = "GRAPHITE";
