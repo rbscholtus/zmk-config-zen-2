@@ -31,7 +31,7 @@
         };
 
         // Behavior: Send ' without shift, _ with shift
-        quote_underscore: behavior {
+        quote_underscore: quote_underscore {
             compatible = "zmk,behavior-keymap";
             label = "Quote_Underscore";
             #binding-cells = <0>;
@@ -42,7 +42,7 @@
         };
 
         // Behavior: Send " without shift, - with shift
-        doublequote_dash: behavior {
+        doublequote_dash: doublequote_dash {
             compatible = "zmk,behavior-keymap";
             label = "DoubleQuote_Dash";
             #binding-cells = <0>;
@@ -53,7 +53,7 @@
         };
 
         // Behavior: Send / without shift, < with shift
-        slash_less: behavior {
+        slash_less: slash_less {
             compatible = "zmk,behavior-keymap";
             label = "Slash_Less";
             #binding-cells = <0>;
@@ -64,7 +64,7 @@
         };
 
         // Behavior: Send , without shift, ? with shift
-        comma_question: behavior {
+        comma_question: comma_question {
             compatible = "zmk,behavior-keymap";
             label = "Comma_Question";
             #binding-cells = <0>;
@@ -75,7 +75,7 @@
         };
 
         // Behavior: Send ) without shift, = with shift
-        paren_equal: behavior {
+        paren_equal: paren_equal {
             compatible = "zmk,behavior-keymap";
             label = "Paren_Equal";
             #binding-cells = <0>;
