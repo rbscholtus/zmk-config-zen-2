@@ -34,7 +34,7 @@
         quote_underscore: behavior {
             compatible = "zmk,behavior-keymap";
             label = "Quote_Underscore";
-            #binding-cells = <1>;
+            #binding-cells = <0>;
             bindings = <
                 &kp QUOT  // Sends `'` when pressed
                 &kp UNDERSCORE  // Sends `_` when Shift is held
@@ -45,7 +45,7 @@
         doublequote_dash: behavior {
             compatible = "zmk,behavior-keymap";
             label = "DoubleQuote_Dash";
-            #binding-cells = <1>;
+            #binding-cells = <0>;
             bindings = <
                 &kp DQT   // Sends " without Shift
                 &kp MINUS // Sends - with Shift
@@ -56,7 +56,7 @@
         slash_less: behavior {
             compatible = "zmk,behavior-keymap";
             label = "Slash_Less";
-            #binding-cells = <1>;
+            #binding-cells = <0>;
             bindings = <
                 &kp SLASH  // Sends / without Shift
                 &kp LT     // Sends < with Shift
@@ -67,7 +67,7 @@
         comma_question: behavior {
             compatible = "zmk,behavior-keymap";
             label = "Comma_Question";
-            #binding-cells = <1>;
+            #binding-cells = <0>;
             bindings = <
                 &kp COMMA  // Sends , without Shift
                 &kp QUESTION  // Sends ? with Shift
@@ -78,7 +78,7 @@
         paren_equal: behavior {
             compatible = "zmk,behavior-keymap";
             label = "Paren_Equal";
-            #binding-cells = <1>;
+            #binding-cells = <0>;
             bindings = <
                 &kp RPAREN  // Sends ) without Shift
                 &kp EQUAL   // Sends = with Shift
