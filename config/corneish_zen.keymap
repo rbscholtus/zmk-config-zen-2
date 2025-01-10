@@ -43,7 +43,7 @@
             layers = <0>;
         };
 
-        bootloader {
+        bootloader2 {
             bindings = <&bootloader>;
             key-positions = <32 33 34>;
             layers = <0>;
