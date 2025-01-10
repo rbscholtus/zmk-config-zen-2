@@ -29,6 +29,15 @@
             #binding-cells = <0>;
             bindings = <&kp LEFT_SHIFT>, <&kp CAPS>;
         };
+
+        quote_underscore: behavior {
+            compatible = "zmk,behavior-keymap";
+            label = "Quote_Underscore";
+            bindings = <
+                &kp QUOT  // Sends `'` when pressed
+                &kp UNDERSCORE  // Sends `_` when Shift is held
+            >;
+        };
     };
 
     combos {
@@ -43,12 +52,6 @@
         bootloader {
             bindings = <&bootloader>;
             key-positions = <25 26 27>;
-            layers = <0>;
-        };
-
-        bootloader2 {
-            bindings = <&bootloader>;
-            key-positions = <32 33 34>;
             layers = <0>;
         };
     };
@@ -71,10 +74,10 @@
         input_layer2 {
             display-name = "GRAPHITE";
             bindings = <
-&trans  &kp B  &kp L  &kp D   &kp W   &kp Z     &kp APOS  &kp F   &kp O    &kp U      &kp J     &kp SEMI
-&trans  &kp N  &kp R  &kp T   &kp S   &kp G     &kp Y     &kp H   &kp A    &kp E      &kp I     &kp COMMA
-&trans  &kp Q  &kp X  &kp M   &kp C   &kp V     &kp K     &kp P   &kp DOT  &kp MINUS  &kp FSLH  &kp EQUAL
-                      &trans  &trans  &trans    &trans    &trans  &trans
+&trans  &kp B  &kp L  &kp D   &kp W   &kp Z     &quote_underscore  &kp F   &kp O    &kp U      &kp J     &kp SEMI
+&trans  &kp N  &kp R  &kp T   &kp S   &kp G     &kp Y              &kp H   &kp A    &kp E      &kp I     &kp COMMA
+&trans  &kp Q  &kp X  &kp M   &kp C   &kp V     &kp K              &kp P   &kp DOT  &kp MINUS  &kp FSLH  &kp EQUAL
+                      &trans  &trans  &trans    &trans             &trans  &trans
             >;
 
             label = "GRAPHITE";
