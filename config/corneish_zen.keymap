@@ -53,7 +53,7 @@
         };
 
         // Behavior: Send / without shift, < with shift
-        slash_less: slash_less {
+        fslash_less: forward_slash_less {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <
@@ -77,7 +77,7 @@
         };
 
         // Behavior: Send ) without shift, = with shift
-        paren_equal: paren_equal {
+        rparen_equal: right_parenthesis_equal {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <
@@ -124,7 +124,7 @@
             bindings = <
 &trans  &kp B  &kp L  &kp D   &kp W   &kp Z     &quote_uscore  &kp F   &kp O    &kp U         &kp J        &kp SEMI
 &trans  &kp N  &kp R  &kp T   &kp S   &kp G     &kp Y          &kp H   &kp A    &kp E         &kp I        &comma_question
-&trans  &kp Q  &kp X  &kp M   &kp C   &kp V     &kp K          &kp P   &kp DOT  &dquote_dash  &slash_less  &paren_equal
+&trans  &kp Q  &kp X  &kp M   &kp C   &kp V     &kp K          &kp P   &kp DOT  &dquote_dash  &fslash_less  &rparen_equal
                       &trans  &trans  &trans    &trans         &trans  &trans
             >;
 
