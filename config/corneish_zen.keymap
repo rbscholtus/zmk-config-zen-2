@@ -115,6 +115,36 @@
             key-positions = <25 26 27>;
             layers = <0>;
         };
+
+        play_pause {
+            bindings = <&kp K_PLAY_PAUSE>;
+            key-positions = <6 7>;
+        };
+
+        mute {
+            bindings = <&kp K_MUTE>;
+            key-positions = <7 8>;
+        };
+
+        volume_decrease {
+            bindings = <&kp C_VOLUME_DOWN>;
+            key-positions = <8 9>;
+        };
+
+        volume_increase {
+            bindings = <&kp C_VOLUME_UP>;
+            key-positions = <9 10>;
+        };
+
+        sleep {
+            bindings = <&kp K_SLEEP>;
+            key-positions = <10 11>;
+        };
+
+        spotlight {
+            bindings = <&kp LG(SPACE)>;
+            key-positions = <3 4>;
+        };
     };
 
     keymap {
@@ -132,13 +162,13 @@
             label = "QWERTY";
         };
 
-        graphite_layer2 {
+        graphite_layer {
             display-name = "GRAPHITE";
             bindings = <
-&trans  &kp B  &kp L  &kp D   &kp W   &kp Z     &quote_uscore  &kp F   &kp O    &kp U         &kp J         &kp SEMI
-&trans  &kp N  &kp R  &kp T   &kp S   &kp G     &kp Y          &kp H   &kp A    &kp E         &kp I         &comma_question
-&trans  &kp Q  &kp X  &kp M   &kp C   &kp V     &kp K          &kp P   &kp DOT  &dquote_dash  &fslash_less  &rparen_equal
-                      &trans  &trans  &trans    &trans         &trans  &trans
+&trans  &kp B  &kp L  &kp D   &kp W   &kp Z     &quote_uscore  &kp F   &kp O          &kp U         &kp J         &kp SEMI
+&trans  &kp N  &kp R  &kp T   &kp S   &kp G     &kp Y          &kp H   &kp A          &kp E         &kp I         &comma_question
+&trans  &kp Q  &kp X  &kp M   &kp C   &kp V     &kp K          &kp P   &kp DOT        &dquote_dash  &fslash_less  &rparen_equal
+                      &trans  &trans  &trans    &trans         &trans  &lt 4 AT_SIGN
             >;
 
             label = "GRAPHITE";
