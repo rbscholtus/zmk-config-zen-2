@@ -51,10 +51,11 @@
             #binding-cells = <0>;
             bindings = <
                 &kp DQT   // Sends " without Shift
-                &kp MINUS // Sends - with Shift
+                &kp KP_MINUS // Sends - with Shift
             >;
 
             mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         // Behavior: Send / without shift, < with shift
@@ -92,10 +93,11 @@
             #binding-cells = <0>;
             bindings = <
                 &kp RIGHT_PARENTHESIS  // Sends ) without Shift
-                &kp EQUAL   // Sends = with Shift
+                &kp KP_EQUAL   // Sends = with Shift
             >;
 
             mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
 
