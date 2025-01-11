@@ -117,7 +117,7 @@
         };
 
         play_pause {
-            bindings = <&kp K_PLAY_PAUSE>;
+            bindings = <&kp C_PLAY_PAUSE>;
             key-positions = <6 7>;
         };
 
@@ -137,7 +137,7 @@
         };
 
         sleep {
-            bindings = <&kp K_SLEEP>;
+            bindings = <&kp C_SLEEP>;
             key-positions = <10 11>;
         };
 
