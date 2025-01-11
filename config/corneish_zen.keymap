@@ -136,8 +136,8 @@
             key-positions = <9 10>;
         };
 
-        sleep {
-            bindings = <&kp C_SLEEP>;
+        power {
+            bindings = <&kp C_POWER>;
             key-positions = <10 11>;
         };
 
