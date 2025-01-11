@@ -31,6 +31,7 @@
         };
 
         // Behavior: Send ' without shift, _ with shift
+
         quote_uscore: quote_underscore {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -38,10 +39,13 @@
                 &kp QUOT  // Sends `'` when pressed
                 &kp UNDERSCORE  // Sends `_` when Shift is held
             >;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
             keep-mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
         // Behavior: Send " without shift, - with shift
+
         dquote_dash: doublequote_dash {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -49,10 +53,12 @@
                 &kp DQT   // Sends " without Shift
                 &kp MINUS // Sends - with Shift
             >;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         // Behavior: Send / without shift, < with shift
+
         fslash_less: forward_slash_less {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -60,11 +66,13 @@
                 &kp SLASH  // Sends / without Shift
                 &kp LT     // Sends < with Shift
             >;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
             keep-mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         // Behavior: Send , without shift, ? with shift
+
         comma_question: comma_question {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -72,11 +80,13 @@
                 &kp COMMA  // Sends , without Shift
                 &kp QUESTION  // Sends ? with Shift
             >;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
             keep-mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         // Behavior: Send ) without shift, = with shift
+
         rparen_equal: right_parenthesis_equal {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -84,6 +94,7 @@
                 &kp RIGHT_PARENTHESIS  // Sends ) without Shift
                 &kp EQUAL   // Sends = with Shift
             >;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
@@ -119,12 +130,12 @@
             label = "QWERTY";
         };
 
-        input_layer2 {
+        graphite_layer2 {
             display-name = "GRAPHITE";
             bindings = <
 &trans  &kp B  &kp L  &kp D   &kp W   &kp Z     &quote_uscore  &kp F   &kp O    &kp U         &kp J        &kp SEMI
 &trans  &kp N  &kp R  &kp T   &kp S   &kp G     &kp Y          &kp H   &kp A    &kp E         &kp I        &comma_question
-&trans  &kp Q  &kp X  &kp M   &kp C   &kp V     &kp K          &kp P   &kp DOT  &dquote_dash  &fslash_less  &rparen_equal
+&trans  &kp Q  &kp X  &kp M   &kp C   &kp V     &kp K          &kp P   &kp DOT  &dquote_dash  &slash_less  &paren_equal
                       &trans  &trans  &trans    &trans         &trans  &trans
             >;
 
