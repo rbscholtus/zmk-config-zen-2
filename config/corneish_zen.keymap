@@ -104,7 +104,7 @@
     combos {
         compatible = "zmk,combos";
 
-        key_layout {
+        switch_layout {
             bindings = <&tog 1>;
             key-positions = <1 2 3>;
             layers = <0 1>;
@@ -119,31 +119,37 @@
         play_pause {
             bindings = <&kp C_PLAY_PAUSE>;
             key-positions = <6 7>;
+            layers = <3 4>;
         };
 
         mute {
             bindings = <&kp K_MUTE>;
             key-positions = <7 8>;
+            layers = <3 4>;
         };
 
         volume_decrease {
             bindings = <&kp C_VOLUME_DOWN>;
             key-positions = <8 9>;
+            layers = <3 4>;
         };
 
         volume_increase {
             bindings = <&kp C_VOLUME_UP>;
             key-positions = <9 10>;
+            layers = <3 4>;
         };
 
         power {
             bindings = <&kp C_POWER>;
             key-positions = <10 11>;
+            layers = <3 4>;
         };
 
         spotlight {
             bindings = <&kp LG(SPACE)>;
             key-positions = <3 4>;
+            layers = <3 4>;
         };
     };
 
