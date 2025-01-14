@@ -104,7 +104,7 @@
     combos {
         compatible = "zmk,combos";
 
-        switch_layout {
+        toggle_graphite {
             bindings = <&tog 1>;
             key-positions = <1 2 3>;
             layers = <0 1>;
@@ -150,6 +150,12 @@
             bindings = <&kp LG(SPACE)>;
             key-positions = <3 4>;
             layers = <4 5>;
+        };
+
+        toggle_focal {
+            bindings = <&tog 2>;
+            key-positions = <2 3 4>;
+            layers = <0 1>;
         };
     };
 
