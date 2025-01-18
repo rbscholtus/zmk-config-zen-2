@@ -155,13 +155,13 @@
         toggle_focal {
             bindings = <&tog 2>;
             key-positions = <2 3 4>;
-            layers = <0 1>;
+            layers = <0 2>;
         };
 
         toggle_rustic {
             bindings = <&tog 3>;
             key-positions = <3 4 5>;
-            layers = <0 1>;
+            layers = <0 3>;
         };
     };
 
