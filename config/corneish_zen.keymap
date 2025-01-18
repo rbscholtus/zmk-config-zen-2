@@ -108,6 +108,15 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_LGUI|MOD_RSFT|MOD_RGUI)>;
         };
+
+        s_all: s_all {
+            compatible = "zmk,behavior-mod-morph";
+            label = "S_ALL";
+            bindings = <&kp S>, <&kp LG(A)>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LGUI|MOD_RGUI)>;
+        };
     };
 
     combos {
@@ -195,7 +204,7 @@
         focal_layer {
             bindings = <
 &gresc                      &kp V        &kp L        &kp H        &kp G        &kp K     &kp Q        &kp F        &kp O        &kp U     &kp J      &kp BSLH
-&tildetab                   &mt LG(A) S  &kp R        &kp N        &kp T        &kp B     &kp Y        &kp C        &kp A        &kp E     &kp I      &kp MINUS
+&tildetab                   &s_all       &kp R        &kp N        &kp T        &kp B     &kp Y        &kp C        &kp A        &kp E     &kp I      &kp MINUS
 &mt LCTRL LEFT_PARENTHESIS  &mt LG(Z) Z  &mt LG(X) X  &mt LG(C) M  &mt LG(V) D  &kp P     &kp SQT      &kp W        &kp DOT      &kp SEMI  &kp COMMA  &kp RIGHT_PARENTHESIS
                                                       &trans       &trans       &trans    &lt 4 SPACE  &lt 3 MINUS  &lt 5 EQUAL
             >;
