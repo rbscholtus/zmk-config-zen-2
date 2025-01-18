@@ -99,15 +99,24 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
             keep-mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
+        tildetab: tilde_tab {
+            compatible = "zmk,behavior-mod-morph";
+            label = "TILDETAB";
+            bindings = <&kp TAB>, <&kp TILDE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_LGUI|MOD_RSFT|MOD_RGUI)>;
+        };
     };
 
     combos {
         compatible = "zmk,combos";
 
         toggle_graphite {
-            bindings = <&tog 1>;
-            key-positions = <1 2 3>;
-            layers = <0 1>;
+            bindings = <&tog 3>;
+            key-positions = <2 3 4>;
+            layers = <0 2>;
         };
 
         bootloader {
@@ -119,49 +128,43 @@
         play_pause {
             bindings = <&kp C_PLAY_PAUSE>;
             key-positions = <6 7>;
-            layers = <5 6>;
+            layers = <4 5>;
         };
 
         mute {
             bindings = <&kp K_MUTE>;
             key-positions = <7 8>;
-            layers = <5 6>;
+            layers = <4 5>;
         };
 
         volume_decrease {
             bindings = <&kp C_VOLUME_DOWN>;
             key-positions = <8 9>;
-            layers = <5 6>;
+            layers = <4 5>;
         };
 
         volume_increase {
             bindings = <&kp C_VOLUME_UP>;
             key-positions = <9 10>;
-            layers = <5 6>;
+            layers = <4 5>;
         };
 
         power {
             bindings = <&kp C_POWER>;
             key-positions = <10 11>;
-            layers = <5 6>;
+            layers = <4 5>;
         };
 
         spotlight {
             bindings = <&kp LG(SPACE)>;
             key-positions = <3 4>;
-            layers = <5 6>;
+            layers = <4 5>;
         };
 
         toggle_focal {
-            bindings = <&tog 2>;
-            key-positions = <2 3 4>;
-            layers = <0 2>;
-        };
-
-        toggle_rustic {
-            bindings = <&tog 3>;
-            key-positions = <3 4 5>;
-            layers = <0 3>;
+            bindings = <&tog 1>;
+            key-positions = <2 3 1>;
+            layers = <0 1>;
         };
     };
 
@@ -172,55 +175,44 @@
             display-name = "QWERTY";
             bindings = <
 &gresc                      &kp Q  &kp W  &kp E               &kp R                &kp T                       &kp Y        &kp U        &kp I                    &kp O    &kp P     &kp MINUS
-&kp TAB                     &kp A  &kp S  &kp D               &kp F                &kp G                       &kp H        &kp J        &kp K                    &kp L    &kp SEMI  &kp SQT
+&tildetab                   &kp A  &kp S  &kp D               &kp F                &kp G                       &kp H        &kp J        &kp K                    &kp L    &kp SEMI  &kp SQT
 &mt LCTRL LEFT_PARENTHESIS  &kp Z  &kp X  &kp C               &kp V                &kp B                       &kp N        &kp M        &kp COMMA                &kp DOT  &kp FSLH  &kp EQUAL
-                                          &mt LEFT_ALT ENTER  &mt LEFT_GUI DELETE  &mt LEFT_SHIFT BACKSPACE    &lt 5 SPACE  &lt 4 MINUS  &lt 6 RIGHT_PARENTHESIS
+                                          &mt LEFT_ALT ENTER  &mt LEFT_GUI DELETE  &mt LEFT_SHIFT BACKSPACE    &lt 4 SPACE  &lt 4 MINUS  &lt 5 RIGHT_PARENTHESIS
             >;
 
             label = "QWERTY";
         };
 
-        graphite_layer {
-            display-name = "GRAPHITE";
-            bindings = <
-&trans  &kp B  &kp L  &kp D   &kp W   &kp Z     &quote_uscore  &kp F   &kp O          &kp U         &kp J         &kp SEMI
-&trans  &kp N  &kp R  &kp T   &kp S   &kp G     &kp Y          &kp H   &kp A          &kp E         &kp I         &comma_question
-&trans  &kp Q  &kp X  &kp M   &kp C   &kp V     &kp K          &kp P   &kp DOT        &dquote_dash  &fslash_less  &rparen_equal
-                      &trans  &trans  &trans    &trans         &trans  &lt 6 AT_SIGN
-            >;
-
-            label = "GRAPHITE";
-        };
-
         focal_layer {
             bindings = <
-&trans  &kp V  &kp L  &kp H   &kp G   &kp K     &kp Q    &kp F   &kp O    &kp U     &kp J      &kp BSLH
-&trans  &kp S  &kp R  &kp N   &kp T   &kp B     &kp Y    &kp C   &kp A    &kp E     &kp I      &kp MINUS
-&trans  &kp Z  &kp X  &kp M   &kp D   &kp P     &kp SQT  &kp W   &kp DOT  &kp SEMI  &kp COMMA  &kp EQUAL
-                      &trans  &trans  &trans    &trans   &trans  &trans
+&gresc                      &kp V        &kp L        &kp H        &kp G        &kp K     &kp Q    &kp F        &kp O        &kp U     &kp J      &kp BSLH
+&tildetab                   &mt LG(A) S  &kp R        &kp N        &kp T        &kp B     &kp Y    &kp C        &kp A        &kp E     &kp I      &kp MINUS
+&mt LCTRL LEFT_PARENTHESIS  &mt LG(Z) Z  &mt LG(X) X  &mt LG(C) M  &mt LG(V) D  &kp P     &kp SQT  &kp W        &kp DOT      &kp SEMI  &kp COMMA  &kp RIGHT_PARENTHESIS
+                                                      &trans       &trans       &trans    &trans   &lt 4 MINUS  &lt 5 EQUAL
             >;
 
             label = "FOCAL";
         };
 
-        rustic_layer {
+        graphite_layer {
+            display-name = "GRAPHITE";
             bindings = <
-&trans  &kp P  &kp L  &kp D   &kp G   &kp V     &kp COMMA  &kp F   &kp O   &kp SQT   &kp Y  &kp BSLH
-&trans  &kp N  &kp R  &kp T   &kp S   &kp B     &kp DOT    &kp U   &kp A   &kp E     &kp I  &kp MINUS
-&trans  &kp Z  &kp X  &kp M   &kp C   &kp W     &kp K      &kp H   &kp Q   &kp SEMI  &kp J  &kp EQUAL
-                      &trans  &trans  &trans    &trans     &trans  &trans
+&trans  &kp B        &kp L        &kp D        &kp W        &kp Z     &quote_uscore  &kp F   &kp O          &kp U         &kp J         &kp SEMI
+&trans  &mt LG(A) N  &kp R        &kp T        &kp S        &kp G     &kp Y          &kp H   &kp A          &kp E         &kp I         &comma_question
+&trans  &mt LG(Z) Z  &mt LG(X) X  &mt LG(C) M  &mt LG(V) C  &kp V     &kp K          &kp P   &kp DOT        &dquote_dash  &fslash_less  &rparen_equal
+                                  &trans       &trans       &trans    &trans         &trans  &lt 5 AT_SIGN
             >;
 
-            label = "RUSTIC";
+            label = "GRAPHITE";
         };
 
         symbol_layer {
             display-name = "SYMBOL";
             bindings = <
-&kp GRAVE                   &kp EXCL       &kp AT         &kp HASH            &kp DLLR             &kp PRCNT                   &kp DOT    &kp N7     &kp N8    &kp N9  &kp KP_PLUS   &kp KP_DIVIDE
-&kp TILDE                   &kp AMPERSAND  &kp PIPE       &kp CARET           &kp LEFT_BRACKET     &kp LEFT_BRACE              &kp EQUAL  &kp N4     &kp N5    &kp N6  &kp KP_MINUS  &kp KP_MULTIPLY
-&mt LCTRL LEFT_PARENTHESIS  &none          &kp BACKSLASH  &none               &kp RBKT             &kp RIGHT_BRACE             &kp N0     &kp N1     &kp N2    &kp N3  &none         &none
-                                                          &mt LEFT_ALT ENTER  &mt LEFT_GUI DELETE  &mt LEFT_SHIFT BACKSPACE    &kp SPACE  &kp ENTER  &kp RPAR
+&kp GRAVE                   &kp EXCL   &kp AT         &kp HASH            &kp DLLR             &kp PRCNT                   &kp KP_DOT       &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_PLUS   &kp KP_DIVIDE
+&kp TILDE                   &kp CARET  &kp AMPERSAND  &kp PIPE            &kp LEFT_BRACKET     &kp LEFT_BRACE              &kp KP_NUMBER_0  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_MINUS  &kp KP_MULTIPLY
+&mt LCTRL LEFT_PARENTHESIS  &none      &none          &kp BACKSLASH       &kp RBKT             &kp RIGHT_BRACE             &kp KP_EQUAL     &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &none         &kp RIGHT_PARENTHESIS
+                                                      &mt LEFT_ALT ENTER  &mt LEFT_GUI DELETE  &mt LEFT_SHIFT BACKSPACE    &kp SPACE        &none            &none
             >;
 
             label = "SYMBOL";
