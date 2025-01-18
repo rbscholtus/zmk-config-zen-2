@@ -168,6 +168,15 @@
         };
     };
 
+    macros {
+        all_or_s: all_or_s {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&mt LG(A) S>;
+            label = "all_or_s";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -186,7 +195,7 @@
         focal_layer {
             bindings = <
 &gresc                      &kp V        &kp L        &kp H        &kp G        &kp K     &kp Q        &kp F        &kp O        &kp U     &kp J      &kp BSLH
-&tildetab                   &mt LG(A) S  &kp R        &kp N        &kp T        &kp B     &kp Y        &kp C        &kp A        &kp E     &kp I      &kp MINUS
+&tildetab                   &all_or_s    &kp R        &kp N        &kp T        &kp B     &kp Y        &kp C        &kp A        &kp E     &kp I      &kp MINUS
 &mt LCTRL LEFT_PARENTHESIS  &mt LG(Z) Z  &mt LG(X) X  &mt LG(C) M  &mt LG(V) D  &kp P     &kp SQT      &kp W        &kp DOT      &kp SEMI  &kp COMMA  &kp RIGHT_PARENTHESIS
                                                       &trans       &trans       &trans    &lt 4 SPACE  &lt 3 MINUS  &lt 5 EQUAL
             >;
