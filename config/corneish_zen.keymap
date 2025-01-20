@@ -222,7 +222,7 @@
                                           &mt LEFT_ALT ENTER  &mt LEFT_GUI DELETE  &mt LEFT_SHIFT BACKSPACE    &lt 4 SPACE  &lt 6 MINUS  &lt 7 EQUAL
             >;
 
-            label = "MAC_QWERTY";
+            label = "QWERTY";
         };
 
         mac_focal_layer {
@@ -233,7 +233,7 @@
                                                     &trans                &trans                &trans    &trans   &trans  &trans
             >;
 
-            label = "MAC_FOCAL";
+            label = "FOCAL";
         };
 
         mac_graphite_layer {
@@ -244,7 +244,7 @@
                                   &trans       &trans       &trans    &trans         &trans  &trans
             >;
 
-            label = "MAC_GRAPH";
+            label = "GRAPHITE";
         };
 
         win_qwerty_layer {
@@ -266,7 +266,7 @@
                                         &trans          &trans           &trans      &trans              &trans        &trans
             >;
 
-            label = "MAC_NAV";
+            label = "NAV";
         };
 
         win_navigation_layer {
