@@ -23,6 +23,25 @@
 
 / {
     behaviors {
+        my_hold_tap: my_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MY_HOLD_TAP";
+            bindings = <&my_kp_macro>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
+        };
+
+        tildetab: tilde_tab {
+            compatible = "zmk,behavior-mod-morph";
+            label = "TILDETAB";
+            bindings = <&kp TAB>, <&kp TILDE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_LGUI|MOD_RSFT|MOD_RGUI)>;
+        };
+
         shift_tab: shift_tab {
             compatible = "zmk,behavior-tap-dance";
             label = "SHIFT_TAB";
@@ -99,29 +118,16 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
             keep-mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-
-        tildetab: tilde_tab {
-            compatible = "zmk,behavior-mod-morph";
-            label = "TILDETAB";
-            bindings = <&kp TAB>, <&kp TILDE>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_LGUI|MOD_RSFT|MOD_RGUI)>;
-        };
-
-        my_hold_tap: my_hold_tap {
-            compatible = "zmk,behavior-hold-tap";
-            label = "MY_HOLD_TAP";
-            bindings = <&my_kp_macro>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "tap-preferred";
-        };
     };
 
     combos {
         compatible = "zmk,combos";
+
+        toggle_mac_focal {
+            bindings = <&tog 1>;
+            key-positions = <2 1 0>;
+            layers = <1 0>;
+        };
 
         toggle_graphite {
             bindings = <&tog 2>;
@@ -129,10 +135,22 @@
             layers = <2 0>;
         };
 
+        toggle_win_qwerty {
+            bindings = <&tog 3>;
+            key-positions = <3 4 5>;
+            layers = <0 3>;
+        };
+
         bootloader {
             bindings = <&bootloader>;
-            key-positions = <25 26 27>;
+            key-positions = <24 25 26>;
             layers = <0>;
+        };
+
+        spotlight {
+            bindings = <&kp LG(SPACE)>;
+            key-positions = <3 4>;
+            layers = <4 6>;
         };
 
         play_pause {
@@ -164,24 +182,6 @@
             key-positions = <10 11>;
             layers = <4 6>;
         };
-
-        spotlight {
-            bindings = <&kp LG(SPACE)>;
-            key-positions = <3 4>;
-            layers = <4 6>;
-        };
-
-        toggle_mac_focal {
-            bindings = <&tog 1>;
-            key-positions = <2 1 0>;
-            layers = <1 0>;
-        };
-
-        toggle_win_qwerty {
-            bindings = <&tog 3>;
-            key-positions = <3 4 5>;
-            layers = <0 3>;
-        };
     };
 
     macros {
@@ -197,7 +197,6 @@
         compatible = "zmk,keymap";
 
         mac_qwerty_layer {
-            display-name = "QWERTY";
             bindings = <
 &gresc                      &kp Q  &kp W  &kp E               &kp R                &kp T                       &kp Y        &kp U        &kp I        &kp O    &kp P     &none
 &tildetab                   &kp A  &kp S  &kp D               &kp F                &kp G                       &kp H        &kp J        &kp K        &kp L    &kp SEMI  &kp SQT
@@ -220,7 +219,6 @@
         };
 
         mac_graphite_layer {
-            display-name = "GRAPHITE";
             bindings = <
 &trans  &kp B        &kp L        &kp D        &kp W        &kp Z     &quote_uscore  &kp F   &kp O    &kp U         &kp J         &kp SEMI
 &trans  &mt LG(A) N  &kp R        &kp T        &kp S        &kp G     &kp Y          &kp H   &kp A    &kp E         &kp I         &comma_question
@@ -232,18 +230,17 @@
         };
 
         win_qwerty_layer {
-            label = "WIN_QWERTY";
-            display-name = "QWERTY";
             bindings = <
 &gresc                         &kp Q  &kp W  &kp E               &kp R                    &kp T                       &kp Y        &kp U        &kp I        &kp O    &kp P     &kp MINUS
 &tildetab                      &kp A  &kp S  &kp D               &kp F                    &kp G                       &kp H        &kp J        &kp K        &kp L    &kp SEMI  &kp SQT
 &mt LEFT_WIN LEFT_PARENTHESIS  &kp Z  &kp X  &kp C               &kp V                    &kp B                       &kp N        &kp M        &kp COMMA    &kp DOT  &kp FSLH  &kp RIGHT_PARENTHESIS
                                              &mt LEFT_ALT ENTER  &mt LEFT_CONTROL DELETE  &mt LEFT_SHIFT BACKSPACE    &lt 4 SPACE  &lt 5 MINUS  &lt 6 EQUAL
             >;
+
+            label = "WIN_QWERTY";
         };
 
         navigation_layer {
-            display-name = "NAV";
             bindings = <
 &trans  &msc SCRL_UP    &mkp MB1        &mmv MOVE_UP    &mkp MB2         &mkp MB3        &none   &kp LA(LEFT)  &kp UP_ARROW  &kp LA(RIGHT)  &none  &none
 &trans  &msc SCRL_DOWN  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none           &none   &kp LEFT      &kp DOWN      &kp RIGHT      &none  &sys_reset
@@ -255,7 +252,6 @@
         };
 
         num_sym_layer {
-            display-name = "SYMBOL";
             bindings = <
 &kp GRAVE  &kp EXCL   &kp AT         &kp HASH       &kp DLLR          &kp PRCNT          &kp KP_DOT       &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_PLUS   &kp KP_DIVIDE
 &kp TILDE  &kp CARET  &kp AMPERSAND  &kp PIPE       &kp LEFT_BRACKET  &kp LEFT_BRACE     &kp KP_NUMBER_0  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_MINUS  &kp KP_MULTIPLY
@@ -267,7 +263,6 @@
         };
 
         fn_settings_layer {
-            display-name = "FN_SETT";
             bindings = <
 &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI  &rgb_ug RGB_SPI  &rgb_ug RGB_EFF  &rgb_ug RGB_ON     &none   &kp F1  &kp F2   &kp F3   &kp F4   &none
 &rgb_ug RGB_HUD  &rgb_ug RGB_SAD  &rgb_ug RGB_BRD  &rgb_ug RGB_SPD  &rgb_ug RGB_EFR  &rgb_ug RGB_OFF    &none   &kp F5  &kp F6   &kp F7   &kp F8   &none
