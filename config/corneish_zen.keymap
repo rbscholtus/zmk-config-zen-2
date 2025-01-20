@@ -23,9 +23,9 @@
 
 / {
     behaviors {
-        my_hold_tap: my_hold_tap {
+        my_mt: my_hold_tap {
             compatible = "zmk,behavior-hold-tap";
-            label = "MY_HOLD_TAP";
+            label = "MY_MT";
             bindings = <&my_kp_macro>, <&kp>;
 
             #binding-cells = <2>;
@@ -227,10 +227,10 @@
 
         mac_focal_layer {
             bindings = <
-&trans  &kp V                 &kp L                 &kp H                 &kp G                 &kp K     &kp Q    &kp F   &kp O    &kp U     &kp J      &kp BSLH
-&trans  &my_hold_tap LG(A) S  &kp R                 &kp N                 &kp T                 &kp B     &kp Y    &kp C   &kp A    &kp E     &kp I      &kp SLASH
-&trans  &my_hold_tap LG(Z) Z  &my_hold_tap LG(X) X  &my_hold_tap LG(C) M  &my_hold_tap LG(V) D  &kp P     &kp SQT  &kp W   &kp DOT  &kp SEMI  &kp COMMA  &kp RIGHT_PARENTHESIS
-                                                    &trans                &trans                &trans    &trans   &trans  &trans
+&trans  &kp V           &kp L           &kp H           &kp G           &kp K     &kp Q    &kp F   &kp O    &kp U     &kp J      &kp BSLH
+&trans  &my_mt LG(A) S  &kp R           &kp N           &kp T           &kp B     &kp Y    &kp C   &kp A    &kp E     &kp I      &kp SLASH
+&trans  &my_mt LG(Z) Z  &my_mt LG(X) X  &my_mt LG(C) M  &my_mt LG(V) D  &kp P     &kp SQT  &kp W   &kp DOT  &kp SEMI  &kp COMMA  &kp RIGHT_PARENTHESIS
+                                        &trans          &trans          &trans    &trans   &trans  &trans
             >;
 
             label = "FOCAL";
@@ -238,10 +238,10 @@
 
         mac_graphite_layer {
             bindings = <
-&trans  &kp B        &kp L        &kp D        &kp W        &kp Z     &quote_uscore  &kp F   &kp O    &kp U         &kp J         &kp SEMI
-&trans  &mt LG(A) N  &kp R        &kp T        &kp S        &kp G     &kp Y          &kp H   &kp A    &kp E         &kp I         &comma_question
-&trans  &mt LG(Z) Z  &mt LG(X) X  &mt LG(C) M  &mt LG(V) C  &kp V     &kp K          &kp P   &kp DOT  &dquote_dash  &fslash_less  &rparen_equal
-                                  &trans       &trans       &trans    &trans         &trans  &trans
+&trans  &kp B           &kp L           &kp D           &kp W           &kp Z     &quote_uscore  &kp F   &kp O    &kp U         &kp J         &kp SEMI
+&trans  &my_mt LG(A) N  &kp R           &kp T           &kp S           &kp G     &kp Y          &kp H   &kp A    &kp E         &kp I         &comma_question
+&trans  &my_mt LG(Z) Z  &my_mt LG(X) X  &my_mt LG(C) M  &my_mt LG(V) C  &kp V     &kp K          &kp P   &kp DOT  &dquote_dash  &fslash_less  &rparen_equal
+                                        &trans          &trans          &trans    &trans         &trans  &trans
             >;
 
             label = "GRAPHITE";
