@@ -23,9 +23,9 @@
 
 / {
     behaviors {
-        td0: td0 {
+        shift_tab: shift_tab {
             compatible = "zmk,behavior-tap-dance";
-            label = "TD0";
+            label = "SHIFT_TAB";
             #binding-cells = <0>;
             bindings = <&kp LEFT_SHIFT>, <&kp CAPS>;
         };
@@ -124,9 +124,9 @@
         compatible = "zmk,combos";
 
         toggle_graphite {
-            bindings = <&tog 3>;
-            key-positions = <2 3 4>;
-            layers = <0 2>;
+            bindings = <&tog 2>;
+            key-positions = <2 3 1>;
+            layers = <2 0>;
         };
 
         bootloader {
@@ -138,43 +138,49 @@
         play_pause {
             bindings = <&kp C_PLAY_PAUSE>;
             key-positions = <6 7>;
-            layers = <4 5>;
+            layers = <4 6>;
         };
 
         mute {
             bindings = <&kp K_MUTE>;
             key-positions = <7 8>;
-            layers = <4 5>;
+            layers = <4 6>;
         };
 
         volume_decrease {
             bindings = <&kp C_VOLUME_DOWN>;
             key-positions = <8 9>;
-            layers = <4 5>;
+            layers = <4 6>;
         };
 
         volume_increase {
             bindings = <&kp C_VOLUME_UP>;
             key-positions = <9 10>;
-            layers = <4 5>;
+            layers = <4 6>;
         };
 
         power {
             bindings = <&kp C_POWER>;
             key-positions = <10 11>;
-            layers = <4 5>;
+            layers = <4 6>;
         };
 
         spotlight {
             bindings = <&kp LG(SPACE)>;
             key-positions = <3 4>;
-            layers = <4 5>;
+            layers = <4 6>;
         };
 
-        toggle_focal {
+        toggle_mac_focal {
             bindings = <&tog 1>;
-            key-positions = <2 3 1>;
-            layers = <0 1>;
+            key-positions = <2 1 0>;
+            layers = <1 0>;
+        };
+
+        toggle_win_qwerty {
+            bindings = <&tog 3>;
+            key-positions = <3 4 5>;
+            layers = <0 3>;
         };
     };
 
@@ -190,51 +196,50 @@
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
+        mac_qwerty_layer {
             display-name = "QWERTY";
             bindings = <
-&gresc                      &kp Q  &kp W  &kp E               &kp R                &kp T                       &kp Y        &kp U        &kp I                    &kp O    &kp P     &kp MINUS
-&tildetab                   &kp A  &kp S  &kp D               &kp F                &kp G                       &kp H        &kp J        &kp K                    &kp L    &kp SEMI  &kp SQT
-&mt LCTRL LEFT_PARENTHESIS  &kp Z  &kp X  &kp C               &kp V                &kp B                       &kp N        &kp M        &kp COMMA                &kp DOT  &kp FSLH  &kp EQUAL
-                                          &mt LEFT_ALT ENTER  &mt LEFT_GUI DELETE  &mt LEFT_SHIFT BACKSPACE    &lt 4 SPACE  &lt 3 MINUS  &lt 5 RIGHT_PARENTHESIS
+&gresc                      &kp Q  &kp W  &kp E               &kp R                &kp T                       &kp Y        &kp U        &kp I        &kp O    &kp P     &none
+&tildetab                   &kp A  &kp S  &kp D               &kp F                &kp G                       &kp H        &kp J        &kp K        &kp L    &kp SEMI  &kp SQT
+&mt LCTRL LEFT_PARENTHESIS  &kp Z  &kp X  &kp C               &kp V                &kp B                       &kp N        &kp M        &kp COMMA    &kp DOT  &kp FSLH  &kp RIGHT_PARENTHESIS
+                                          &mt LEFT_ALT ENTER  &mt LEFT_GUI DELETE  &mt LEFT_SHIFT BACKSPACE    &lt 4 SPACE  &lt 5 MINUS  &lt 6 EQUAL
             >;
 
-            label = "QWERTY";
+            label = "MAC_QWERTY";
         };
 
-        focal_layer {
+        mac_focal_layer {
             bindings = <
-&gresc                      &kp V                 &kp L                 &kp H                 &kp G                 &kp K     &kp Q        &kp F        &kp O        &kp U     &kp J      &kp BSLH
-&tildetab                   &my_hold_tap LG(A) S  &kp R                 &kp N                 &kp T                 &kp B     &kp Y        &kp C        &kp A        &kp E     &kp I      &kp MINUS
-&mt LCTRL LEFT_PARENTHESIS  &my_hold_tap LG(Z) Z  &my_hold_tap LG(X) X  &my_hold_tap LG(C) M  &my_hold_tap LG(V) D  &kp P     &kp SQT      &kp W        &kp DOT      &kp SEMI  &kp COMMA  &kp RIGHT_PARENTHESIS
-                                                                        &trans                &trans                &trans    &lt 4 SPACE  &lt 3 MINUS  &lt 5 EQUAL
+&trans  &kp V                 &kp L                 &kp H                 &kp G                 &kp K     &kp Q    &kp F   &kp O    &kp U     &kp J      &kp BSLH
+&trans  &my_hold_tap LG(A) S  &kp R                 &kp N                 &kp T                 &kp B     &kp Y    &kp C   &kp A    &kp E     &kp I      &kp SLASH
+&trans  &my_hold_tap LG(Z) Z  &my_hold_tap LG(X) X  &my_hold_tap LG(C) M  &my_hold_tap LG(V) D  &kp P     &kp SQT  &kp W   &kp DOT  &kp SEMI  &kp COMMA  &kp RIGHT_PARENTHESIS
+                                                    &trans                &trans                &trans    &trans   &trans  &trans
             >;
 
-            label = "FOCAL";
+            label = "MAC_FOCAL";
         };
 
-        graphite_layer {
+        mac_graphite_layer {
             display-name = "GRAPHITE";
             bindings = <
-&trans  &kp B        &kp L        &kp D        &kp W        &kp Z     &quote_uscore  &kp F   &kp O          &kp U         &kp J         &kp SEMI
-&trans  &mt LG(A) N  &kp R        &kp T        &kp S        &kp G     &kp Y          &kp H   &kp A          &kp E         &kp I         &comma_question
-&trans  &mt LG(Z) Z  &mt LG(X) X  &mt LG(C) M  &mt LG(V) C  &kp V     &kp K          &kp P   &kp DOT        &dquote_dash  &fslash_less  &rparen_equal
-                                  &trans       &trans       &trans    &trans         &trans  &lt 5 AT_SIGN
+&trans  &kp B        &kp L        &kp D        &kp W        &kp Z     &quote_uscore  &kp F   &kp O    &kp U         &kp J         &kp SEMI
+&trans  &mt LG(A) N  &kp R        &kp T        &kp S        &kp G     &kp Y          &kp H   &kp A    &kp E         &kp I         &comma_question
+&trans  &mt LG(Z) Z  &mt LG(X) X  &mt LG(C) M  &mt LG(V) C  &kp V     &kp K          &kp P   &kp DOT  &dquote_dash  &fslash_less  &rparen_equal
+                                  &trans       &trans       &trans    &trans         &trans  &trans
             >;
 
-            label = "GRAPHITE";
+            label = "MAC_GRAPHITE";
         };
 
-        num_sym_layer {
-            display-name = "SYMBOL";
+        win_qwerty_layer {
+            label = "WIN_QWERTY";
+            display-name = "QWERTY";
             bindings = <
-&kp GRAVE                   &kp EXCL   &kp AT         &kp HASH            &kp DLLR             &kp PRCNT                   &kp KP_DOT       &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_PLUS   &kp KP_DIVIDE
-&kp TILDE                   &kp CARET  &kp AMPERSAND  &kp PIPE            &kp LEFT_BRACKET     &kp LEFT_BRACE              &kp KP_NUMBER_0  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_MINUS  &kp KP_MULTIPLY
-&mt LCTRL LEFT_PARENTHESIS  &none      &none          &kp BACKSLASH       &kp RBKT             &kp RIGHT_BRACE             &kp KP_EQUAL     &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &none         &kp RIGHT_PARENTHESIS
-                                                      &mt LEFT_ALT ENTER  &mt LEFT_GUI DELETE  &mt LEFT_SHIFT BACKSPACE    &kp SPACE        &none            &none
+&gresc                         &kp Q  &kp W  &kp E               &kp R                    &kp T                       &kp Y        &kp U        &kp I        &kp O    &kp P     &kp MINUS
+&tildetab                      &kp A  &kp S  &kp D               &kp F                    &kp G                       &kp H        &kp J        &kp K        &kp L    &kp SEMI  &kp SQT
+&mt LEFT_WIN LEFT_PARENTHESIS  &kp Z  &kp X  &kp C               &kp V                    &kp B                       &kp N        &kp M        &kp COMMA    &kp DOT  &kp FSLH  &kp RIGHT_PARENTHESIS
+                                             &mt LEFT_ALT ENTER  &mt LEFT_CONTROL DELETE  &mt LEFT_SHIFT BACKSPACE    &lt 4 SPACE  &lt 5 MINUS  &lt 6 EQUAL
             >;
-
-            label = "NUM_SYM";
         };
 
         navigation_layer {
@@ -247,6 +252,18 @@
             >;
 
             label = "NAV";
+        };
+
+        num_sym_layer {
+            display-name = "SYMBOL";
+            bindings = <
+&kp GRAVE  &kp EXCL   &kp AT         &kp HASH       &kp DLLR          &kp PRCNT          &kp KP_DOT       &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_PLUS   &kp KP_DIVIDE
+&kp TILDE  &kp CARET  &kp AMPERSAND  &kp PIPE       &kp LEFT_BRACKET  &kp LEFT_BRACE     &kp KP_NUMBER_0  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_MINUS  &kp KP_MULTIPLY
+&trans     &none      &none          &kp BACKSLASH  &kp RBKT          &kp RIGHT_BRACE    &kp KP_EQUAL     &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &none         &kp RIGHT_PARENTHESIS
+                                     &trans         &trans            &trans             &trans           &trans           &trans
+            >;
+
+            label = "NUM_SYM";
         };
 
         fn_settings_layer {
