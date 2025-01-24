@@ -123,20 +123,20 @@
     combos {
         compatible = "zmk,combos";
 
-        toggle_mac_focal {
-            bindings = <&tog 1>;
+        to_mac_focal {
+            bindings = <&to_focal>;
             key-positions = <2 1 3>;
             layers = <0 1>;
         };
 
-        toggle_mac_graphite {
-            bindings = <&tog 2>;
+        to_mac_graphite {
+            bindings = <&to_graphite>;
             key-positions = <2 3 4>;
             layers = <0 2>;
         };
 
-        toggle_win_qwerty {
-            bindings = <&tog 3>;
+        to_win_qwerty {
+            bindings = <&to_win_qwerty>;
             key-positions = <3 4 5>;
             layers = <0 3>;
         };
@@ -214,6 +214,27 @@
             #binding-cells = <1>;
             bindings = <&macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "MY_KP_MACRO";
+        };
+
+        to_focal: to_focal {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&to 0 &tog 1>;
+            label = "TO_FOCAL";
+        };
+
+        to_graphite: to_graphite {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&to 0 &tog 2>;
+            label = "TO_GRAPHITE";
+        };
+
+        to_win_qwerty: to_win_qwerty {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&to 0 &tog 3>;
+            label = "TO_WIN_QWERTY";
         };
     };
 
