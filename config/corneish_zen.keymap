@@ -305,10 +305,10 @@
 
         num_sym_layer {
             bindings = <
-&kp TILDE  &kp EXCL   &kp AT         &kp HASH       &kp DLLR          &kp PRCNT          &kp DOT    &kp N1  &kp N2  &kp N3  &kp PLUS   &none
-&trans     &kp CARET  &kp AMPERSAND  &kp PIPE       &kp LEFT_BRACKET  &kp LEFT_BRACE     &kp N0     &kp N4  &kp N5  &kp N6  &kp MINUS  &kp ASTERISK
-&trans     &none      &kp GRAVE      &kp BACKSLASH  &kp RBKT          &kp RIGHT_BRACE    &kp EQUAL  &kp N7  &kp N8  &kp N9  &kp SLASH  &none
-                                     &trans         &trans            &trans             &trans     &trans  &trans
+&kp GRAVE  &kp EXCL   &kp AT         &kp HASH           &kp DLLR               &kp PRCNT          &kp DOT    &kp N1  &kp N2  &kp N3  &kp PLUS   &none
+&trans     &kp CARET  &kp AMPERSAND  &kp LEFT_BRACKET   &kp LEFT_PARENTHESIS   &kp LEFT_BRACE     &kp N0     &kp N4  &kp N5  &kp N6  &kp MINUS  &kp ASTERISK
+&trans     &kp TILDE  &kp PIPE       &kp RIGHT_BRACKET  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE    &kp EQUAL  &kp N7  &kp N8  &kp N9  &kp SLASH  &none
+                                     &trans             &trans                 &trans             &trans     &trans  &trans
             >;
 
             label = "NUM_SYM";
