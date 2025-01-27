@@ -7,7 +7,6 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/pointing.h>
@@ -178,24 +177,6 @@
             bindings = <&kp C_POWER>;
             key-positions = <10 11>;
             layers = <4>;
-        };
-
-        reset_system {
-            bindings = <&sys_reset>;
-            key-positions = <25 26 27>;
-            layers = <0 1 2 3>;
-        };
-
-        out_usb {
-            bindings = <&out OUT_USB>;
-            key-positions = <26 27 28 26>;
-            layers = <0 1 2 3>;
-        };
-
-        out_ble {
-            bindings = <&out OUT_BLE>;
-            key-positions = <29 27 28 29>;
-            layers = <0 1 2 3>;
         };
 
         to_mac_qwerty {
