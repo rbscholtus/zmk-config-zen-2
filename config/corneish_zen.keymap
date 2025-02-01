@@ -244,10 +244,10 @@
 
         mac_qwerty_layer {
             bindings = <
-&gresc                       &kp Q  &kp W  &kp E               &kp R                &kp T                       &kp Y        &kp U        &kp I      &kp O    &kp P     &kp BACKSLASH
-&mt GLOBE LEFT_PARENTHESIS   &kp A  &kp S  &kp D               &kp F                &kp G                       &kp H        &kp J        &kp K      &kp L    &kp SEMI  &kp SQT
-&mt LCTRL RIGHT_PARENTHESIS  &kp Z  &kp X  &kp C               &kp V                &kp B                       &kp N        &kp M        &kp COMMA  &kp DOT  &kp FSLH  &kp EQUAL
-                                           &mt LEFT_ALT ENTER  &mt LEFT_GUI DELETE  &mt LEFT_SHIFT BACKSPACE    &lt 4 SPACE  &lt 6 MINUS  &lt 7 TAB
+&gresc                      &kp Q  &kp W  &kp E               &kp R                &kp T                       &kp Y        &kp U        &kp I        &kp O    &kp P     &kp BACKSLASH
+&mt GLOBE TAB               &kp A  &kp S  &kp D               &kp F                &kp G                       &kp H        &kp J        &kp K        &kp L    &kp SEMI  &kp SQT
+&mt LCTRL LEFT_PARENTHESIS  &kp Z  &kp X  &kp C               &kp V                &kp B                       &kp N        &kp M        &kp COMMA    &kp DOT  &kp FSLH  &kp RIGHT_PARENTHESIS
+                                          &mt LEFT_ALT ENTER  &mt LEFT_GUI DELETE  &mt LEFT_SHIFT BACKSPACE    &lt 4 SPACE  &lt 6 MINUS  &lt 7 EQUAL
             >;
 
             label = "QWERTY";
@@ -277,10 +277,10 @@
 
         win_qwerty_layer {
             bindings = <
-&trans                          &trans  &trans  &trans  &trans            &trans    &trans       &trans  &trans  &trans  &trans  &trans
-&kp LEFT_PARENTHESIS            &trans  &trans  &trans  &trans            &trans    &trans       &trans  &trans  &trans  &trans  &trans
-&mt LEFT_WIN RIGHT_PARENTHESIS  &trans  &trans  &trans  &trans            &trans    &trans       &trans  &trans  &trans  &trans  &trans
-                                                &trans  &mt LCTRL DELETE  &trans    &lt 5 SPACE  &trans  &trans
+&trans                         &trans  &trans  &trans  &trans            &trans    &trans       &trans  &trans  &trans  &trans  &trans
+&kp TAB                        &trans  &trans  &trans  &trans            &trans    &trans       &trans  &trans  &trans  &trans  &trans
+&mt LEFT_WIN LEFT_PARENTHESIS  &trans  &trans  &trans  &trans            &trans    &trans       &trans  &trans  &trans  &trans  &trans
+                                               &trans  &mt LCTRL DELETE  &trans    &lt 5 SPACE  &trans  &trans
             >;
 
             label = "WIN_QWERTY";
@@ -288,10 +288,10 @@
 
         mac_navigation_layer {
             bindings = <
-&trans  &msc SCRL_UP    &mkp MB1        &mmv MOVE_UP    &mkp MB2         &mkp MB3    &kp LA(UP_ARROW)    &kp LA(LEFT)  &kp UP_ARROW  &kp LA(RIGHT)  &kp LG(UP_ARROW)    &none
-&trans  &msc SCRL_DOWN  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none       &kp LA(DOWN_ARROW)  &kp LEFT      &kp DOWN      &kp RIGHT      &kp LG(DOWN_ARROW)  &none
-&trans  &none           &none           &none           &none            &none       &none               &kp LG(LEFT)  &none         &kp LG(RIGHT)  &none               &none
-                                        &trans          &trans           &trans      &trans              &trans        &trans
+&trans  &none  &mkp MB1        &mmv MOVE_UP    &mkp MB2         &msc SCRL_UP      &kp LA(UP_ARROW)    &kp LA(LEFT)  &kp UP_ARROW  &kp LA(RIGHT)  &kp LG(UP_ARROW)    &none
+&trans  &none  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_DOWN    &kp LA(DOWN_ARROW)  &kp LEFT      &kp DOWN      &kp RIGHT      &kp LG(DOWN_ARROW)  &none
+&trans  &none  &none           &none           &none            &none             &none               &kp LG(LEFT)  &none         &kp LG(RIGHT)  &none               &none
+                               &trans          &trans           &trans            &trans              &trans        &trans
             >;
 
             label = "NAV";
@@ -299,10 +299,10 @@
 
         win_navigation_layer {
             bindings = <
-&trans  &msc SCRL_UP    &mkp MB1        &mmv MOVE_UP    &mkp MB2         &mkp MB3    &kp PAGE_UP    &kp LC(LEFT)  &kp UP_ARROW  &kp LC(RIGHT)  &kp LC(HOME)  &none
-&trans  &msc SCRL_DOWN  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none       &kp PAGE_DOWN  &kp LEFT      &kp DOWN      &kp RIGHT      &kp LC(END)   &none
-&trans  &none           &none           &none           &none            &none       &none          &kp HOME      &none         &kp END        &none         &none
-                                        &trans          &trans           &trans      &trans         &trans        &trans
+&trans  &none  &mkp MB1        &mmv MOVE_UP    &mkp MB2         &msc SCRL_UP    &kp PAGE_UP    &kp LC(LEFT)  &kp UP_ARROW  &kp LC(RIGHT)  &kp LC(HOME)  &none
+&trans  &none  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_UP    &kp PAGE_DOWN  &kp LEFT      &kp DOWN      &kp RIGHT      &kp LC(END)   &none
+&trans  &none  &none           &none           &none            &none           &none          &kp HOME      &none         &kp END        &none         &none
+                               &trans          &trans           &trans          &trans         &trans        &trans
             >;
 
             label = "WIN_NAV";
@@ -311,8 +311,8 @@
         num_sym_layer {
             bindings = <
 &kp GRAVE  &kp EXCL   &kp AT         &kp HASH           &kp DLLR               &kp PRCNT          &kp DOT    &kp N1  &kp N2  &kp N3  &kp PLUS   &trans
-&trans     &kp CARET  &kp AMPERSAND  &kp LEFT_BRACKET   &kp LEFT_PARENTHESIS   &kp LEFT_BRACE     &kp N0     &kp N4  &kp N5  &kp N6  &kp MINUS  &kp ASTERISK
-&trans     &kp TILDE  &kp PIPE       &kp RIGHT_BRACKET  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE    &kp EQUAL  &kp N7  &kp N8  &kp N9  &kp SLASH  &trans
+&kp TILDE  &kp CARET  &kp AMPERSAND  &kp LEFT_BRACKET   &kp LEFT_PARENTHESIS   &kp LEFT_BRACE     &kp N0     &kp N4  &kp N5  &kp N6  &kp MINUS  &kp ASTERISK
+&trans     &none      &kp PIPE       &kp RIGHT_BRACKET  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE    &kp EQUAL  &kp N7  &kp N8  &kp N9  &kp SLASH  &trans
                                      &trans             &trans                 &trans             &trans     &trans  &trans
             >;
 
