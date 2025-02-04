@@ -118,6 +118,26 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
             keep-mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
+        eight_lt: eight_lt {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp N8>, <&kp LESS_THAN>;
+
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_LSFT|MOD_RSFT)>;
+            label = "EIGHT_LT";
+        };
+
+        nine_gt: nine_gt {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp N9>, <&kp GREATER_THAN>;
+
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_LSFT|MOD_RSFT)>;
+            label = "NINE_GT";
+        };
     };
 
     combos {
@@ -244,7 +264,7 @@
 
         mac_qwerty_layer {
             bindings = <
-&gresc                      &kp Q  &kp W  &kp E               &kp R                &kp T                       &kp Y        &kp U        &kp I        &kp O    &kp P     &kp BACKSLASH
+&kp ESCAPE                  &kp Q  &kp W  &kp E               &kp R                &kp T                       &kp Y        &kp U        &kp I        &kp O    &kp P     &kp BACKSLASH
 &mt GLOBE TAB               &kp A  &kp S  &kp D               &kp F                &kp G                       &kp H        &kp J        &kp K        &kp L    &kp SEMI  &kp SQT
 &mt LCTRL LEFT_PARENTHESIS  &kp Z  &kp X  &kp C               &kp V                &kp B                       &kp N        &kp M        &kp COMMA    &kp DOT  &kp FSLH  &kp RIGHT_PARENTHESIS
                                           &mt LEFT_ALT ENTER  &mt LEFT_GUI DELETE  &mt LEFT_SHIFT BACKSPACE    &lt 4 SPACE  &lt 6 MINUS  &lt 7 EQUAL
@@ -310,10 +330,10 @@
 
         num_sym_layer {
             bindings = <
-&kp GRAVE  &kp EXCL   &kp AT         &kp HASH           &kp DLLR               &kp PRCNT          &kp DOT    &kp N1  &kp N2  &kp N3  &kp PLUS   &trans
-&kp TILDE  &kp CARET  &kp AMPERSAND  &kp LEFT_BRACKET   &kp LEFT_PARENTHESIS   &kp LEFT_BRACE     &kp N0     &kp N4  &kp N5  &kp N6  &kp MINUS  &kp ASTERISK
-&trans     &none      &kp PIPE       &kp RIGHT_BRACKET  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE    &kp EQUAL  &kp N7  &kp N8  &kp N9  &kp SLASH  &trans
-                                     &trans             &trans                 &trans             &trans     &trans  &trans
+&kp GRAVE  &kp EXCL   &kp AT    &kp HASH       &kp DLLR         &kp PRCNT            &kp DOT    &kp N1  &kp N2  &kp N3  &kp PLUS   &kp PERCENT
+&kp TILDE  &kp CARET  &kp PIPE  &kp AMPERSAND  &kp LEFT_BRACE   &kp LEFT_BRACKET     &kp N0     &kp N4  &kp N5  &kp N6  &kp MINUS  &kp ASTERISK
+&trans     &none      &none     &none          &kp RIGHT_BRACE  &kp RIGHT_BRACKET    &kp COMMA  &kp N7  &kp N8  &kp N9  &kp SLASH  &trans
+                                &trans         &trans           &trans               &trans     &trans  &trans
             >;
 
             label = "NUM_SYM";
@@ -322,7 +342,7 @@
         fn_settings_layer {
             bindings = <
 &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI  &rgb_ug RGB_SPI  &rgb_ug RGB_EFF  &rgb_ug RGB_ON     &none   &kp F1  &kp F2   &kp F3   &kp F4   &none
-&rgb_ug RGB_HUD  &rgb_ug RGB_SAD  &rgb_ug RGB_BRD  &rgb_ug RGB_SPD  &rgb_ug RGB_EFR  &rgb_ug RGB_OFF    &none   &kp F5  &kp F6   &kp F7   &kp F8   &none
+&trans           &rgb_ug RGB_SAD  &rgb_ug RGB_BRD  &rgb_ug RGB_SPD  &rgb_ug RGB_EFR  &rgb_ug RGB_OFF    &none   &kp F5  &kp F6   &kp F7   &kp F8   &none
 &trans           &bt BT_CLR_ALL   &bt BT_SEL 3     &bt BT_SEL 2     &bt BT_SEL 1     &bt BT_SEL 0       &none   &kp F9  &kp F10  &kp F11  &kp F12  &none
                                                    &trans           &trans           &trans             &trans  &trans  &trans
             >;
