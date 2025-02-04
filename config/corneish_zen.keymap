@@ -276,8 +276,8 @@
         mac_focal_layer {
             bindings = <
 &trans  &kp V           &kp L           &kp H           &kp G           &kp K     &kp Q    &kp F   &kp O    &kp U     &kp J      &kp BSLH
-&trans  &my_mt LG(A) S  &kp R           &kp N           &kp T           &kp B     &kp Y    &kp C   &kp A    &kp E     &kp I      &kp SLASH
-&trans  &my_mt LG(Z) Z  &my_mt LG(X) X  &my_mt LG(C) M  &my_mt LG(V) D  &kp P     &kp SQT  &kp W   &kp DOT  &kp SEMI  &kp COMMA  &kp RIGHT_PARENTHESIS
+&trans  &my_mt LG(A) S  &kp R           &kp N           &kp T           &kp B     &kp Y    &kp C   &kp A    &kp E     &kp I      &kp COMMA
+&trans  &my_mt LG(Z) Z  &my_mt LG(X) X  &my_mt LG(C) M  &my_mt LG(V) D  &kp P     &kp SQT  &kp W   &kp DOT  &kp SEMI  &kp SLASH  &kp RIGHT_PARENTHESIS
                                         &trans          &trans          &trans    &trans   &trans  &trans
             >;
 
