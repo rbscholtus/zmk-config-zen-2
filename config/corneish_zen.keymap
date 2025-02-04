@@ -22,9 +22,6 @@
 };
 
 / {
-    behaviors {
-    };
-
     combos {
         compatible = "zmk,combos";
 
@@ -106,19 +103,19 @@
         mac_mouse_layer {
             label = "MOUSE";
             bindings = <
-&trans  &none  &none    &none    &none    &none      &msc SCRL_UP    &mkp MB1        &mmv MOVE_UP    &mkp MB2         &none     &none
-&trans  &none  &none    &none    &none    &none      &msc SCRL_DOWN  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &mkp MB3  &none
-&trans  &none  &none    &none    &none    &none      &none           &none           &none           &none            &none     &none
-                        &trans   &trans   &trans     &trans          &trans          &trans
+&trans  &none  &none  &none   &none   &none     &msc SCRL_UP    &mkp MB1        &mmv MOVE_UP    &mkp MB2         &none     &none
+&trans  &none  &none  &none   &none   &none     &msc SCRL_DOWN  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &mkp MB3  &none
+&trans  &none  &none  &none   &none   &none     &none           &none           &none           &none            &none     &none
+                      &trans  &trans  &trans    &trans          &trans          &trans
             >;
         };
 
         mac_navigation_layer {
             bindings = <
-&trans  &none  &none    &none    &none    &none      &kp LA(UP_ARROW)    &kp LA(LEFT)  &kp UP_ARROW  &kp LA(RIGHT)  &kp LG(UP_ARROW)    &none
-&trans  &none  &none    &none    &none    &none      &kp LA(DOWN_ARROW)  &kp LEFT      &kp DOWN      &kp RIGHT      &kp LG(DOWN_ARROW)  &none
-&trans  &none  &none    &none    &none    &none      &none               &kp LG(LEFT)  &none         &kp LG(RIGHT)  &none               &none
-                        &trans   &trans   &trans     &trans              &trans        &trans
+&trans  &none  &none  &none   &none   &none     &kp LA(UP_ARROW)    &kp LA(LEFT)  &kp UP_ARROW  &kp LA(RIGHT)  &kp LG(UP_ARROW)    &none
+&trans  &none  &none  &none   &none   &none     &kp LA(DOWN_ARROW)  &kp LEFT      &kp DOWN      &kp RIGHT      &kp LG(DOWN_ARROW)  &none
+&trans  &none  &none  &none   &none   &none     &none               &kp LG(LEFT)  &none         &kp LG(RIGHT)  &none               &none
+                      &trans  &trans  &trans    &trans              &trans        &trans
             >;
 
             label = "NAV";
@@ -126,10 +123,10 @@
 
         number_layer {
             bindings = <
-&trans  &none    &none    &none    &none    &none      &kp DOT    &kp N1  &kp N2  &kp N3  &kp PLUS   &none
-&trans  &none    &none    &none    &none    &none      &kp N0     &kp N4  &kp N5  &kp N6  &kp MINUS  &kp ASTERISK
-&trans  &none    &none    &none    &none    &none      &kp COMMA  &kp N7  &kp N8  &kp N9  &kp SLASH  &kp PERCENT
-                          &trans   &trans   &trans     &trans     &trans  &trans
+&trans  &none  &none  &none   &none   &none     &kp DOT    &kp N1  &kp N2  &kp N3  &kp PLUS   &none
+&trans  &none  &none  &none   &none   &none     &kp N0     &kp N4  &kp N5  &kp N6  &kp MINUS  &kp ASTERISK
+&trans  &none  &none  &none   &none   &none     &kp COMMA  &kp N7  &kp N8  &kp N9  &kp SLASH  &kp PERCENT
+                      &trans  &trans  &trans    &trans     &trans  &trans
             >;
 
             label = "NUM";
@@ -138,9 +135,9 @@
         symbol_layer {
             label = "symbol";
             bindings = <
-&trans  &none  &none  &none   &kp SEMICOLON         &none               &kp EXCLAMATION    &kp AT_SIGN            &kp POUND      &kp DOLLAR     &kp PERCENT  &kp GRAVE
+&trans  &none  &none  &none   &kp SEMICOLON         &kp COLON           &kp EXCLAMATION    &kp AT_SIGN            &kp POUND      &kp DOLLAR     &kp PERCENT  &kp GRAVE
 &trans  &none  &none  &none   &kp LEFT_PARENTHESIS  &kp LEFT_BRACKET    &kp RIGHT_BRACKET  &kp RIGHT_PARENTHESIS  &kp AMPERSAND  &kp PIPE       &kp CARET    &kp TILDE
-&trans  &none  &none  &none   &kp LEFT_BRACE        &none               &none              &kp RIGHT_BRACE        &none          &kp BACKSLASH  &none        &none
+&trans  &none  &none  &none   &kp LEFT_BRACE        &kp LESS_THAN       &kp GREATER_THAN   &kp RIGHT_BRACE        &none          &kp BACKSLASH  &none        &none
                       &trans  &trans                &trans              &trans             &trans                 &trans
             >;
         };
