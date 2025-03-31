@@ -9,8 +9,6 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
-#include <dt-bindings/zmk/pointing.h>
-#include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/rgb.h>
 
 / {
@@ -264,10 +262,10 @@
 
         mac_qwerty_layer {
             bindings = <
-&kp ESCAPE                  &kp Q  &kp W  &kp E               &kp R                &kp T                       &kp Y        &kp U        &kp I        &kp O    &kp P     &kp BACKSLASH
-&mt GLOBE TAB               &kp A  &kp S  &kp D               &kp F                &kp G                       &kp H        &kp J        &kp K        &kp L    &kp SEMI  &kp SQT
-&mt LCTRL LEFT_PARENTHESIS  &kp Z  &kp X  &kp C               &kp V                &kp B                       &kp N        &kp M        &kp COMMA    &kp DOT  &kp FSLH  &kp RIGHT_PARENTHESIS
-                                          &mt LEFT_ALT ENTER  &mt LEFT_GUI DELETE  &mt LEFT_SHIFT BACKSPACE    &lt 4 SPACE  &lt 6 MINUS  &lt 7 EQUAL
+&kp ESCAPE                  &kp Q  &kp W  &kp E               &kp R                &kp T                   &kp Y            &kp U        &kp I        &kp O    &kp P     &kp BACKSLASH
+&mt GLOBE TAB               &kp A  &kp S  &kp D               &kp F                &kp G                   &kp H            &kp J        &kp K        &kp L    &kp SEMI  &kp SQT
+&mt LCTRL LEFT_PARENTHESIS  &kp Z  &kp X  &kp C               &kp V                &kp B                   &kp N            &kp M        &kp COMMA    &kp DOT  &kp FSLH  &kp RIGHT_PARENTHESIS
+                                          &mt LEFT_ALT ENTER  &mt LEFT_GUI DELETE  &mt LEFT_SHIFT SPACE    &lt 4 BACKSPACE  &lt 6 MINUS  &lt 7 EQUAL
             >;
 
             label = "QWERTY";
@@ -297,10 +295,10 @@
 
         win_qwerty_layer {
             bindings = <
-&trans                         &trans  &trans  &trans  &trans            &trans    &trans       &trans  &trans  &trans  &trans  &trans
-&kp TAB                        &trans  &trans  &trans  &trans            &trans    &trans       &trans  &trans  &trans  &trans  &trans
-&mt LEFT_WIN LEFT_PARENTHESIS  &trans  &trans  &trans  &trans            &trans    &trans       &trans  &trans  &trans  &trans  &trans
-                                               &trans  &mt LCTRL DELETE  &trans    &lt 5 SPACE  &trans  &trans
+&trans                         &trans  &trans  &trans  &trans            &trans    &trans           &trans  &trans  &trans  &trans  &trans
+&kp TAB                        &trans  &trans  &trans  &trans            &trans    &trans           &trans  &trans  &trans  &trans  &trans
+&mt LEFT_WIN LEFT_PARENTHESIS  &trans  &trans  &trans  &trans            &trans    &trans           &trans  &trans  &trans  &trans  &trans
+                                               &trans  &mt LCTRL DELETE  &trans    &lt 5 BACKSPACE  &trans  &trans
             >;
 
             label = "WIN_QWERTY";
