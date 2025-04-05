@@ -31,110 +31,17 @@
             flavor = "tap-preferred";
         };
 
-        tilde_tab: tilde_tab {
-            compatible = "zmk,behavior-mod-morph";
-            label = "TILDE_TAB";
-            bindings = <&kp TAB>, <&kp TILDE>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_LGUI|MOD_RSFT|MOD_RGUI)>;
-        };
-
-        shift_tab: shift_tab {
-            compatible = "zmk,behavior-tap-dance";
-            label = "SHIFT_TAB";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT_SHIFT>, <&kp CAPS>;
-        };
-
         // Behavior: Send ' without shift, _ with shift
-
-        quote_uscore: quote_underscore {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <
-                &kp QUOT  // Sends `'` when pressed
-                &kp UNDERSCORE  // Sends `_` when Shift is held
-            >;
-
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            keep-mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
         // Behavior: Send " without shift, - with shift
-
-        dquote_dash: doublequote_dash {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <
-                &kp DQT   // Sends " without Shift
-                &kp KP_MINUS // Sends - with Shift
-            >;
-
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            keep-mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
         // Behavior: Send / without shift, < with shift
-
-        fslash_less: forward_slash_less {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <
-                &kp SLASH  // Sends / without Shift
-                &kp LT     // Sends < with Shift
-            >;
-
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            keep-mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
         // Behavior: Send , without shift, ? with shift
-
-        comma_question: comma_question {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <
-                &kp COMMA  // Sends , without Shift
-                &kp QUESTION  // Sends ? with Shift
-            >;
-
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            keep-mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
         // Behavior: Send ) without shift, = with shift
 
-        rparen_equal: right_parenthesis_equal {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <
-                &kp RIGHT_PARENTHESIS  // Sends ) without Shift
-                &kp KP_EQUAL   // Sends = with Shift
-            >;
-
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            keep-mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        eight_lt: eight_lt {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp N8>, <&kp LESS_THAN>;
-
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            keep-mods = <(MOD_LSFT|MOD_RSFT)>;
-            label = "EIGHT_LT";
-        };
-
-        nine_gt: nine_gt {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp N9>, <&kp GREATER_THAN>;
-
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            keep-mods = <(MOD_LSFT|MOD_RSFT)>;
-            label = "NINE_GT";
+        tog_on: toggle_layer_on_only {
+            compatible = "zmk,behavior-toggle-layer";
+            label = "Toggle Layer On";
+            #binding-cells = <1>;
+            toggle-mode = "on";
         };
     };
 
@@ -151,38 +58,38 @@
             key-positions = <2 1 3>;
         };
 
-        to_mac_graphite {
-            bindings = <&to_graphite>;
+        to_win_qwerty {
+            bindings = <&to_win_qwerty>;
             key-positions = <2 3 4>;
         };
 
-        to_win_qwerty {
-            bindings = <&to_win_qwerty>;
+        to_win_focal {
+            bindings = <&to_win_focal>;
             key-positions = <3 4 5>;
         };
 
         bootloader {
             bindings = <&bootloader>;
             key-positions = <24 25 26>;
-            layers = <0 1 2 3>;
+            layers = <0 1 2>;
         };
 
         reset_system {
             bindings = <&sys_reset>;
             key-positions = <25 26 27>;
-            layers = <0 1 2 3>;
+            layers = <0 1 2>;
         };
 
         out_usb {
             bindings = <&out OUT_USB>;
             key-positions = <26 27 28>;
-            layers = <0 1 2 3>;
+            layers = <0 1 2>;
         };
 
         out_ble {
             bindings = <&out OUT_BLE>;
             key-positions = <27 28 29>;
-            layers = <0 1 2 3>;
+            layers = <0 1 2>;
         };
 
         spotlight {
@@ -238,22 +145,22 @@
         to_focal: to_focal {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 0 &tog 1>;
+            bindings = <&to 1>;
             label = "TO_FOCAL";
-        };
-
-        to_graphite: to_graphite {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&to 0 &tog 2>;
-            label = "TO_GRAPHITE";
         };
 
         to_win_qwerty: to_win_qwerty {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 0 &tog 3>;
+            bindings = <&to 2>;
             label = "TO_WIN_QWERTY";
+        };
+
+        to_win_focal: to_win_focal {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&to 3 &tog_on 1 &tog_on 2>;
+            label = "TO_WIN_FOCAL";
         };
     };
 
@@ -262,46 +169,46 @@
 
         mac_qwerty_layer {
             bindings = <
-&kp ESCAPE                  &kp Q  &kp W  &kp E               &kp R                &kp T                   &kp Y            &kp U        &kp I        &kp O    &kp P     &kp BACKSLASH
-&mt GLOBE TAB               &kp A  &kp S  &kp D               &kp F                &kp G                   &kp H            &kp J        &kp K        &kp L    &kp SEMI  &kp SQT
-&mt LCTRL LEFT_PARENTHESIS  &kp Z  &kp X  &kp C               &kp V                &kp B                   &kp N            &kp M        &kp COMMA    &kp DOT  &kp FSLH  &kp RIGHT_PARENTHESIS
-                                          &mt LEFT_ALT ENTER  &mt LEFT_GUI DELETE  &mt LEFT_SHIFT SPACE    &lt 4 BACKSPACE  &lt 6 MINUS  &lt 7 EQUAL
+&kp ESCAPE                  &kp Q  &kp W  &kp E                &kp R                &kp T                       &kp Y        &kp U        &kp I        &kp O    &kp P     &kp BACKSLASH
+&mt GLOBE TAB               &kp A  &kp S  &kp D                &kp F                &kp G                       &kp H        &kp J        &kp K        &kp L    &kp SEMI  &kp SQT
+&mt LCTRL LEFT_PARENTHESIS  &kp Z  &kp X  &kp C                &kp V                &kp B                       &kp N        &kp M        &kp COMMA    &kp DOT  &kp FSLH  &kp RIGHT_PARENTHESIS
+                                          &mt LEFT_ALT ESCAPE  &mt LEFT_GUI DELETE  &mt LEFT_SHIFT BACKSPACE    &lt 4 SPACE  &lt 6 MINUS  &lt 7 ENTER
             >;
 
             label = "QWERTY";
         };
 
-        mac_focal_layer {
+        focal_layer {
             bindings = <
-&trans  &kp V           &kp L           &kp H           &kp G           &kp K     &kp Q    &kp F   &kp O      &kp U    &kp J      &kp BSLH
-&trans  &my_mt LG(A) S  &kp R           &kp N           &kp T           &kp B     &kp Y    &kp C   &kp A      &kp E    &kp I      &kp SEMI
-&trans  &my_mt LG(Z) Z  &my_mt LG(X) X  &my_mt LG(C) M  &my_mt LG(V) D  &kp P     &kp SQT  &kp W   &kp COMMA  &kp DOT  &kp SLASH  &kp RIGHT_PARENTHESIS
+&trans  &kp V           &kp L           &kp H           &kp G           &kp K     &kp Q    &kp F   &kp O   &kp U   &kp J   &trans
+&trans  &my_mt LG(A) S  &kp R           &kp N           &kp T           &kp B     &kp Y    &kp C   &kp A   &kp E   &kp I   &kp SEMI
+&trans  &my_mt LG(Z) Z  &my_mt LG(X) X  &my_mt LG(C) M  &my_mt LG(V) D  &kp P     &kp SQT  &kp W   &trans  &trans  &trans  &trans
                                         &trans          &trans          &trans    &trans   &trans  &trans
             >;
 
             label = "FOCAL";
         };
 
-        mac_graphite_layer {
-            bindings = <
-&trans  &kp B           &kp L           &kp D           &kp W           &kp Z     &quote_uscore  &kp F   &kp O    &kp U         &kp J         &kp SEMI
-&trans  &my_mt LG(A) N  &kp R           &kp T           &kp S           &kp G     &kp Y          &kp H   &kp A    &kp E         &kp I         &comma_question
-&trans  &my_mt LG(Z) Z  &my_mt LG(X) X  &my_mt LG(C) M  &my_mt LG(V) C  &kp V     &kp K          &kp P   &kp DOT  &dquote_dash  &fslash_less  &rparen_equal
-                                        &trans          &trans          &trans    &trans         &trans  &trans
-            >;
-
-            label = "GRAPHITE";
-        };
-
         win_qwerty_layer {
             bindings = <
-&trans                         &trans  &trans  &trans  &trans            &trans    &trans           &trans  &trans  &trans  &trans  &trans
-&kp TAB                        &trans  &trans  &trans  &trans            &trans    &trans           &trans  &trans  &trans  &trans  &trans
-&mt LEFT_WIN LEFT_PARENTHESIS  &trans  &trans  &trans  &trans            &trans    &trans           &trans  &trans  &trans  &trans  &trans
-                                               &trans  &mt LCTRL DELETE  &trans    &lt 5 BACKSPACE  &trans  &trans
+&trans                         &trans  &trans  &trans  &trans            &trans    &trans       &trans  &trans  &trans  &trans  &trans
+&kp TAB                        &trans  &trans  &trans  &trans            &trans    &trans       &trans  &trans  &trans  &trans  &trans
+&mt LEFT_WIN LEFT_PARENTHESIS  &trans  &trans  &trans  &trans            &trans    &trans       &trans  &trans  &trans  &trans  &trans
+                                               &trans  &mt LCTRL DELETE  &trans    &lt 5 SPACE  &trans  &trans
             >;
 
-            label = "WIN_QWERTY";
+            label = "WIN_QWE";
+        };
+
+        win_focal_layer {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
+            >;
+
+            label = "WIN_FOC";
         };
 
         mac_navigation_layer {
@@ -328,10 +235,10 @@
 
         num_sym_layer {
             bindings = <
-&kp GRAVE  &kp EXCL   &kp AT    &kp HASH       &kp DLLR         &kp PRCNT            &kp DOT    &kp N1  &kp N2  &kp N3  &kp PLUS   &kp EQUAL
-&kp TILDE  &kp CARET  &kp PIPE  &kp AMPERSAND  &kp LEFT_BRACE   &kp LEFT_BRACKET     &kp N0     &kp N4  &kp N5  &kp N6  &kp MINUS  &kp ASTERISK
-&trans     &none      &none     &none          &kp RIGHT_BRACE  &kp RIGHT_BRACKET    &kp COMMA  &kp N7  &kp N8  &kp N9  &kp SLASH  &trans
-                                &trans         &trans           &trans               &trans     &trans  &trans
+&none      &kp EXCL   &kp AT         &kp HASH       &kp DLLR              &kp PRCNT            &kp DOT    &kp N1  &kp N2  &kp N3  &kp PLUS      &kp COMMA
+&kp TILDE  &kp CARET  &kp PIPE       &kp AMPERSAND  &kp LEFT_PARENTHESIS  &kp LEFT_BRACKET     &kp N0     &kp N4  &kp N5  &kp N6  &kp ASTERISK  &kp MINUS
+&trans     &kp GRAVE  &kp BACKSLASH  &none          &kp RPAR              &kp RIGHT_BRACKET    &kp EQUAL  &kp N7  &kp N8  &kp N9  &kp SLASH     &trans
+                                     &trans         &trans                &trans               &trans     &trans  &trans
             >;
 
             label = "NUM_SYM";
