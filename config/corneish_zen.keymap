@@ -122,6 +122,24 @@
             key-positions = <10 11>;
             layers = <4 5>;
         };
+
+        screenshot_mac {
+            bindings = <&kp LS(LG(NUMBER_4))>;
+            key-positions = <5 4>;
+            layers = <4>;
+        };
+
+        screenshot_win {
+            bindings = <&kp LS(LG(S))>;
+            key-positions = <5 4>;
+            layers = <5>;
+        };
+
+        win_start {
+            bindings = <&kp LEFT_GUI>;
+            key-positions = <3 4>;
+            layers = <5>;
+        };
     };
 
     macros {
