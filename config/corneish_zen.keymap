@@ -97,13 +97,13 @@
 
         spotlight {
             bindings = <&kp LG(SPACE)>;
-            key-positions = <15 16>;
+            key-positions = <3 4>;
             layers = <4>;
         };
 
         win_start {
             bindings = <&kp LEFT_GUI>;
-            key-positions = <15 16>;
+            key-positions = <3 4>;
             layers = <5>;
         };
 
