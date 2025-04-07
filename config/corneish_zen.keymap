@@ -109,13 +109,13 @@
 
         screenshot_mac {
             bindings = <&kp LS(LG(NUMBER_4))>;
-            key-positions = <4 5>;
+            key-positions = <2 3>;
             layers = <4>;
         };
 
         screenshot_win {
             bindings = <&kp LS(LG(S))>;
-            key-positions = <4 5>;
+            key-positions = <2 3>;
             layers = <5>;
         };
 
