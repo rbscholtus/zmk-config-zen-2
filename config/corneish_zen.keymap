@@ -62,11 +62,6 @@
             key-positions = <5 4 3>;
         };
 
-        to_focal2 {
-            bindings = <&to_win_focal>;
-            key-positions = <17 16 15>;
-        };
-
         enable_studio {
             bindings = <&studio_unlock>;
             key-positions = <12 13 14>;
@@ -106,13 +101,13 @@
 
         screenshot_mac {
             bindings = <&kp LS(LG(NUMBER_4))>;
-            key-positions = <2 3>;
+            key-positions = <1 2>;
             layers = <4>;
         };
 
         screenshot_win {
             bindings = <&kp LS(LG(S))>;
-            key-positions = <2 3>;
+            key-positions = <1 2>;
             layers = <5>;
         };
 
