@@ -59,7 +59,8 @@
 
         to_win_focal {
             bindings = <&to_win_focal>;
-            key-positions = <3 4 5>;
+            key-positions = <5 4 3>;
+            layers = <0 1 2 3>;
         };
 
         enable_studio {
@@ -118,7 +119,7 @@
         };
 
         power {
-            bindings = <&kp C_POWER>;
+            bindings = <&soft_off>;
             key-positions = <10 11>;
             layers = <4 5>;
         };
@@ -139,6 +140,11 @@
             bindings = <&kp LEFT_GUI>;
             key-positions = <3 4>;
             layers = <5>;
+        };
+
+        to_focal2 {
+            bindings = <&to_win_focal>;
+            key-positions = <17 16 15>;
         };
     };
 
