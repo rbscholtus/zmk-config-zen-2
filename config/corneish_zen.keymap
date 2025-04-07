@@ -42,28 +42,27 @@
     combos {
         compatible = "zmk,combos";
 
-        to_mac_qwerty {
+        to_mac_qwerty_cb {
             bindings = <&to 0>;
             key-positions = <0 1 2>;
             layers = <1 2 3>;
         };
 
-        to_mac_focal {
-            bindings = <&to_focal>;
+        to_mac_focal_cb {
+            bindings = <&to 1>;
             key-positions = <1 2 3>;
             layers = <0 2 3>;
         };
 
-        to_win_qwerty {
-            bindings = <&to_win_qwerty>;
+        to_win_qwerty_cb {
+            bindings = <&to 2>;
             key-positions = <2 3 4>;
             layers = <0 1 3>;
         };
 
-        to_win_focal {
+        to_win_focal_cb {
             bindings = <&to_win_focal>;
             key-positions = <5 4 3>;
-            layers = <0 1 2>;
         };
 
         to_focal2 {
