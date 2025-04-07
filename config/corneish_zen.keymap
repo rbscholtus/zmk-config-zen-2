@@ -140,6 +140,11 @@
             key-positions = <3 4>;
             layers = <5>;
         };
+
+        to_win_focal2 {
+            bindings = <&new_macro>;
+            key-positions = <13 14 15>;
+        };
     };
 
     macros {
@@ -169,6 +174,13 @@
             #binding-cells = <0>;
             bindings = <&to 3 &tog_on 1 &tog_on 2>;
             label = "TO_WIN_FOCAL";
+        };
+
+        new_macro: new_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&tog_on 1 &tog_on 2 &tog_on 3>;
+            label = "NEW_MACRO";
         };
     };
 
