@@ -42,12 +42,12 @@
     combos {
         compatible = "zmk,combos";
 
-        bootloader {
+        bootloader_left {
             bindings = <&bootloader>;
             key-positions = <24 25 26>;
         };
 
-        reset_system {
+        reset_system_left {
             bindings = <&sys_reset>;
             key-positions = <25 26 27>;
         };
@@ -108,6 +108,16 @@
             bindings = <&kp C_VOLUME_UP>;
             key-positions = <9 10>;
             layers = <4 5>;
+        };
+
+        reset_system_right {
+            bindings = <&sys_reset>;
+            key-positions = <32 33 34>;
+        };
+
+        bootloader_right {
+            bindings = <&bootloader>;
+            key-positions = <33 34 35>;
         };
     };
 
