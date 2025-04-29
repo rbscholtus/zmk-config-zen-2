@@ -42,12 +42,12 @@
     combos {
         compatible = "zmk,combos";
 
-        bootloader_left {
+        bootloader {
             bindings = <&bootloader>;
             key-positions = <24 25 26>;
         };
 
-        reset_system_left {
+        reset_system {
             bindings = <&sys_reset>;
             key-positions = <25 26 27>;
         };
@@ -108,16 +108,6 @@
             bindings = <&kp C_VOLUME_UP>;
             key-positions = <9 10>;
             layers = <4 5>;
-        };
-
-        reset_system_right {
-            bindings = <&sys_reset>;
-            key-positions = <32 33 34>;
-        };
-
-        bootloader_right {
-            bindings = <&bootloader>;
-            key-positions = <33 34 35>;
         };
     };
 
@@ -208,9 +198,9 @@
 
         num_sym_layer {
             bindings = <
-&kp TILDE  &kp EXCL   &kp AT         &kp HASH          &kp DLLR           &kp PRCNT        &kp DOT    &kp N1  &kp N2  &kp N3  &kp PLUS      &none
+&kp TILDE  &kp EXCL   &kp AT         &kp HASH          &kp DLLR           &kp PRCNT        &kp DOT    &kp N1  &kp N2  &kp N3  &kp PLUS      &kp COMMA
 &kp GRAVE  &kp CARET  &kp AMPERSAND  &kp LPAR          &kp RPAR           &kp PIPE         &kp N0     &kp N4  &kp N5  &kp N6  &kp ASTERISK  &kp MINUS
-&trans     &none      &kp BACKSLASH  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSLASH    &kp COMMA  &kp N7  &kp N8  &kp N9  &kp SLASH     &kp EQUAL
+&trans     &none      &kp BACKSLASH  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSLASH    &kp EQUAL  &kp N7  &kp N8  &kp N9  &kp SLASH     &trans
                                      &trans            &trans             &trans           &trans     &trans  &trans
             >;
 
