@@ -109,6 +109,30 @@
             key-positions = <9 10>;
             layers = <4 5>;
         };
+
+        the {
+            bindings = <&my_the>;
+            key-positions = <16 3 21>;
+            layers = <1 3>;
+        };
+
+        that {
+            bindings = <&my_that>;
+            key-positions = <16 3 20>;
+            layers = <1 3>;
+        };
+
+        for {
+            bindings = <&my_for>;
+            key-positions = <7 8 14>;
+            layers = <1 3>;
+        };
+
+        and {
+            bindings = <&my_and>;
+            key-positions = <20 15 28>;
+            layers = <1 3>;
+        };
     };
 
     macros {
@@ -124,6 +148,34 @@
             #binding-cells = <0>;
             bindings = <&tog_on 1 &tog_on 2 &tog_on 3>;
             label = "TO_WIN_FOCAL";
+        };
+
+        my_the: my_the {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp T &kp H &kp E>;
+            label = "MY_THE";
+        };
+
+        my_that: my_that {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp T &kp H &kp A &kp T>;
+            label = "MY_THAT";
+        };
+
+        my_and: my_and {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp A &kp N &kp D>;
+            label = "MY_AND";
+        };
+
+        my_for: my_for {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp F &kp O &kp R>;
+            label = "MY_FOR";
         };
     };
 
