@@ -173,49 +173,49 @@
         spotlight {
             bindings = <&kp LG(SPACE)>;
             key-positions = <3 4>;
-            layers = <5>;
+            layers = <6>;
         };
 
         win_start {
             bindings = <&kp LEFT_GUI>;
             key-positions = <3 4>;
-            layers = <6>;
+            layers = <7>;
         };
 
         screenshot_mac {
             bindings = <&kp LS(LG(NUMBER_4))>;
             key-positions = <2 3>;
-            layers = <5>;
+            layers = <6>;
         };
 
         screenshot_win {
             bindings = <&kp LS(LG(S))>;
             key-positions = <2 3>;
-            layers = <6>;
+            layers = <7>;
         };
 
         play_pause {
             bindings = <&kp C_PLAY_PAUSE>;
             key-positions = <6 7>;
-            layers = <5 6>;
+            layers = <6 7>;
         };
 
         mute {
             bindings = <&kp K_MUTE>;
             key-positions = <7 8>;
-            layers = <5 6>;
+            layers = <6 7>;
         };
 
         volume_decrease {
             bindings = <&kp C_VOLUME_DOWN>;
             key-positions = <8 9>;
-            layers = <5 6>;
+            layers = <6 7>;
         };
 
         volume_increase {
             bindings = <&kp C_VOLUME_UP>;
             key-positions = <9 10>;
-            layers = <5 6>;
+            layers = <6 7>;
         };
 
         the {
@@ -285,6 +285,13 @@
             bindings = <&kp F &kp O &kp R>;
             label = "MY_FOR";
         };
+
+        to_win_neu: to_win_neu {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&tog_on 2 &tog_on 3 &tog_on 5>;
+            label = "TO_WIN_NEU";
+        };
     };
 
     keymap {
@@ -292,10 +299,10 @@
 
         mac_qwerty_layer {
             bindings = <
-&kp ESCAPE       &kp Q  &kp W  &kp E                &kp R                &kp T                       &kp Y        &kp U        &kp I        &kp O    &kp P     &kp BACKSLASH
-&mt GLOBE TAB    &kp A  &kp S  &kp D                &kp F                &kp G                       &kp H        &kp J        &kp K        &kp L    &kp SEMI  &kp SQT
-&mt LCTRL GRAVE  &kp Z  &kp X  &kp C                &kp V                &kp B                       &kp N        &kp M        &kp COMMA    &kp DOT  &kp FSLH  &kp EQUAL
-                               &mt LEFT_ALT ESCAPE  &mt LEFT_GUI DELETE  &mt LEFT_SHIFT BACKSPACE    &lt 5 SPACE  &lt 7 MINUS  &lt 9 ENTER
+&kp ESCAPE       &kp Q  &kp W  &kp E                &kp R                &kp T                       &kp Y        &kp U        &kp I         &kp O    &kp P     &kp BACKSLASH
+&mt GLOBE TAB    &kp A  &kp S  &kp D                &kp F                &kp G                       &kp H        &kp J        &kp K         &kp L    &kp SEMI  &kp SQT
+&mt LCTRL GRAVE  &kp Z  &kp X  &kp C                &kp V                &kp B                       &kp N        &kp M        &kp COMMA     &kp DOT  &kp FSLH  &kp EQUAL
+                               &mt LEFT_ALT ESCAPE  &mt LEFT_GUI DELETE  &mt LEFT_SHIFT BACKSPACE    &lt 6 SPACE  &lt 8 MINUS  &lt 10 ENTER
             >;
 
             label = "QWERTY";
@@ -314,10 +321,10 @@
 
         Neu-vv_layer {
             bindings = <
-&trans  &kp V    &kp P    &kp L   &kp D   &slash_astrk                         &minus_plus  &kp U            &kp O       &kp Y  &kp F  &kp BSLH
-&trans  &kp S    &kp C    &kp N   &kp T   &kp K                                &comma_lpar  &kp A            &kp E       &kp I  &kp H  &kp SEMI
-&trans  &mt Z X  &mt Q W  &kp M   &kp G   &dqt_excl                            &kp BSPC     &dot_rpar        &sqt_qmark  &kp J  &kp B  &at_hash
-                          &trans  &trans  &my_hold_sk LEFT_SHIFT LEFT_SHIFT    &trans       &lt_eql_und 8 0  &trans
+&trans  &kp V    &kp P    &kp L   &kp D   &slash_astrk        &minus_plus  &kp U            &kp O       &kp Y  &kp F  &kp BSLH
+&trans  &kp S    &kp C    &kp N   &kp T   &kp K               &comma_lpar  &kp A            &kp E       &kp I  &kp H  &kp SEMI
+&trans  &mt Z X  &mt Q W  &kp M   &kp G   &dqt_excl           &kp BSPC     &dot_rpar        &sqt_qmark  &kp J  &kp B  &at_hash
+                          &trans  &trans  &mt LEFT_SHIFT R    &trans       &lt_eql_und 9 0  &trans
             >;
 
             label = "NEU_VV";
@@ -328,7 +335,7 @@
 &trans              &trans  &trans  &trans  &trans            &trans    &trans       &trans  &trans  &trans  &trans  &trans
 &kp TAB             &trans  &trans  &trans  &trans            &trans    &trans       &trans  &trans  &trans  &trans  &trans
 &mt LEFT_WIN GRAVE  &trans  &trans  &trans  &trans            &trans    &trans       &trans  &trans  &trans  &trans  &trans
-                                    &trans  &mt LCTRL DELETE  &trans    &lt 6 SPACE  &trans  &trans
+                                    &trans  &mt LCTRL DELETE  &trans    &lt 7 SPACE  &trans  &trans
             >;
 
             label = "WIN_QWE";
@@ -343,6 +350,16 @@
             >;
 
             label = "WIN_FOC";
+        };
+
+        win_neu_layer {
+            label = "WIN_NEU";
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
+            >;
         };
 
         mac_navigation_layer {
@@ -369,10 +386,10 @@
 
         num_sym_layer {
             bindings = <
-&kp CARET  &kp PIPE          &kp AMPERSAND      &kp EXCLAMATION  &kp AT           &kp HASH                    &kp DOT    &kp N1  &kp N2  &kp N3  &kp PLUS      &kp COMMA
-&kp TILDE  &kp LESS_THAN     &kp GREATER_THAN   &kp LPAR         &kp RPAR         &kp SPACE                   &kp N0     &kp N4  &kp N5  &kp N6  &kp ASTERISK  &kp MINUS
-&trans     &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_BRACE   &kp RIGHT_BRACE  &kp DOLLAR                  &kp EQUAL  &kp N7  &kp N8  &kp N9  &kp SLASH     &kp PRCNT
-                                                &trans           &trans           &mt LEFT_SHIFT BACKSPACE    &trans     &trans  &trans
+&kp CARET  &kp PIPE          &kp AMPERSAND      &kp EXCLAMATION  &kp AT            &kp HASH                    &kp DOT    &kp N1  &kp N2  &kp N3  &kp PLUS      &kp COMMA
+&kp TILDE  &kp LEFT_BRACE    &kp RIGHT_BRACE    &kp LPAR         &kp RPAR          &kp SPACE                   &kp N0     &kp N4  &kp N5  &kp N6  &kp ASTERISK  &kp MINUS
+&trans     &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LESS_THAN    &kp GREATER_THAN  &kp DOLLAR                  &kp EQUAL  &kp N7  &kp N8  &kp N9  &kp SLASH     &kp PRCNT
+                                                &trans           &trans            &mt LEFT_SHIFT BACKSPACE    &trans     &trans  &trans
             >;
 
             label = "NUM_SYM";
@@ -390,10 +407,10 @@
 
         fn_settings_layer {
             bindings = <
-&to 0   &to 1           &to 2         &to 3         &to_win_focal    &rgb_ug RGB_ON     &none   &kp F1  &kp F2   &kp F3   &kp F4   &none
-&trans  &out OUT_BLE    &out OUT_USB  &none         &rgb_ug RGB_EFR  &rgb_ug RGB_OFF    &none   &kp F5  &kp F6   &kp F7   &kp F8   &none
-&trans  &bt BT_CLR_ALL  &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1     &bt BT_SEL 0       &none   &kp F9  &kp F10  &kp F11  &kp F12  &none
-                                      &trans        &trans           &trans             &trans  &trans  &trans
+&to 0   &to 1           &to 2         &to 3         &to_win_focal   &rgb_ug RGB_ON     &none   &kp F1  &kp F2   &kp F3   &kp F4   &none
+&trans  &out OUT_BLE    &out OUT_USB  &none         &rgb_ug RGB_ON  &rgb_ug RGB_OFF    &none   &kp F5  &kp F6   &kp F7   &kp F8   &none
+&trans  &bt BT_CLR_ALL  &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1    &bt BT_SEL 0       &none   &kp F9  &kp F10  &kp F11  &kp F12  &none
+                                      &trans        &trans          &trans             &trans  &trans  &trans
             >;
 
             label = "FN_SETT";
