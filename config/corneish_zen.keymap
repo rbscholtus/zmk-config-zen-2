@@ -215,10 +215,10 @@
 
         win_focal_layer {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
+&trans  &trans          &trans          &trans          &trans          &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &my_mt LC(A) S  &trans          &trans          &trans          &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &my_mt LC(Z) Z  &my_mt LC(X) X  &my_mt LC(C) M  &my_mt LC(V) D  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                                        &trans          &trans          &trans    &trans  &trans  &trans
             >;
 
             label = "WIN_FOC";
