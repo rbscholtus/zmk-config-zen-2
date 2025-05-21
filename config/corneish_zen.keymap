@@ -39,7 +39,7 @@
             bindings = <&my_kp_macro>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <300>;
             flavor = "tap-preferred";
         };
 
@@ -82,6 +82,16 @@
             compatible = "zmk,behavior-mod-morph";
             label = "DOT_RPAR";
             bindings = <&kp DOT>, <&kp RPAR>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        bspc_del: bspc_del {
+            compatible = "zmk,behavior-mod-morph";
+            label = "BSPC_DEL";
+            bindings = <&kp BACKSPACE>, <&kp DELETE>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -195,7 +205,7 @@
             bindings = <
 &trans  &kp V           &kp L           &kp H           &kp G           &kp K     &my_mt Q SINGLE_QUOTE  &kp F   &kp O        &kp U      &kp J      &kp BACKSLASH
 &trans  &my_mt LG(A) S  &kp R           &kp N           &kp T           &kp B     &kp Y                  &kp C   &kp A        &kp E      &kp I      &kp SEMI
-&trans  &my_mt LG(Z) Z  &my_mt LG(X) X  &my_mt LG(C) M  &my_mt LG(V) D  &kp P     &kp BACKSPACE          &kp W   &comma_lpar  &dot_rpar  &kp SLASH  &kp EQUAL
+&trans  &my_mt LG(Z) Z  &my_mt LG(X) X  &my_mt LG(C) M  &my_mt LG(V) D  &kp P     &bspc_del              &kp W   &comma_lpar  &dot_rpar  &kp SLASH  &kp EQUAL
                                         &trans          &trans          &trans    &trans                 &trans  &trans
             >;
 
