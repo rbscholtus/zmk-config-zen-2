@@ -55,7 +55,7 @@
             toggle-mode = "on";
         };
 
-        my_holF my_hold_sk {
+        my_hold_sk: my_hold_sk {
             compatible = "zmk,behavior-hold-tap";
             label = "MY_HOLD_SK";
             bindings = <&kp>, <&my_quick_sk>;
