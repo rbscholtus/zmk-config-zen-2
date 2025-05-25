@@ -193,10 +193,10 @@
 
         mac_qwerty_layer {
             bindings = <
-&kp ESCAPE       &kp Q  &kp W  &kp E               &kp R                &kp T                                &kp Y        &kp U               &kp I        &kp O    &kp P     &kp BACKSLASH
-&mt GLOBE TAB    &kp A  &kp S  &kp D               &kp F                &kp G                                &kp H        &my_mt J BACKSPACE  &kp K        &kp L    &kp SEMI  &kp SQT
-&mt LCTRL GRAVE  &kp Z  &kp X  &kp C               &kp V                &kp B                                &kp N        &kp M               &kp COMMA    &kp DOT  &kp FSLH  &kp EQUAL
-                               &mt LEFT_ALT ENTER  &mt LEFT_GUI DELETE  &my_hold_sk LEFT_SHIFT LEFT_SHIFT    &lt 4 SPACE  &lt 6 MINUS         &lt 7 ENTER
+&kp ESCAPE       &kp Q  &kp W  &kp E                    &kp R                &kp T                                &kp Y        &kp U               &kp I        &kp O    &kp P     &kp BACKSLASH
+&mt GLOBE TAB    &kp A  &kp S  &kp D                    &kp F                &kp G                                &kp H        &my_mt J BACKSPACE  &kp K        &kp L    &kp SEMI  &kp SQT
+&mt LCTRL GRAVE  &kp Z  &kp X  &kp C                    &kp V                &kp B                                &kp N        &kp M               &kp COMMA    &kp DOT  &kp FSLH  &kp EQUAL
+                               &my_quick_sk LEFT_SHIFT  &mt LEFT_GUI DELETE  &my_hold_sk LEFT_SHIFT LEFT_SHIFT    &lt 4 SPACE  &lt 6 MINUS         &lt 7 ENTER
             >;
 
             label = "QWERTY";
