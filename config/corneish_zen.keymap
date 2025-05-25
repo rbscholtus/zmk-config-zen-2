@@ -31,6 +31,11 @@
     };
 };
 
+&sk {
+    release-after-ms = <2000>;
+    quick-release;
+};
+
 / {
     behaviors {
         my_mt: my_hold_tap {
@@ -50,7 +55,7 @@
             toggle-mode = "on";
         };
 
-        my_hold_sk: my_hold_sk {
+        my_holF my_hold_sk {
             compatible = "zmk,behavior-hold-tap";
             label = "MY_HOLD_SK";
             bindings = <&kp>, <&my_quick_sk>;
@@ -196,7 +201,7 @@
 &kp ESCAPE       &kp Q  &kp W  &kp E                    &kp R                &kp T                                &kp Y        &kp U               &kp I        &kp O    &kp P     &kp BACKSLASH
 &mt GLOBE TAB    &kp A  &kp S  &kp D                    &kp F                &kp G                                &kp H        &my_mt J BACKSPACE  &kp K        &kp L    &kp SEMI  &kp SQT
 &mt LCTRL GRAVE  &kp Z  &kp X  &kp C                    &kp V                &kp B                                &kp N        &kp M               &kp COMMA    &kp DOT  &kp FSLH  &kp EQUAL
-                               &my_quick_sk LEFT_SHIFT  &mt LEFT_GUI DELETE  &my_hold_sk LEFT_SHIFT LEFT_SHIFT    &lt 4 SPACE  &lt 6 MINUS         &lt 7 ENTER
+                               &mt LEFT_ALT ENTER       &mt LEFT_GUI DELETE  &sk LEFT_SHIFT                       &lt 4 SPACE  &lt 6 MINUS         &lt 7 ENTER
             >;
 
             label = "QWERTY";
