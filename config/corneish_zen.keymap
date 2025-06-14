@@ -101,7 +101,15 @@
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            keep-mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        my_gresc: my_gresc {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MY_GRESC";
+            bindings = <&kp ESCAPE>, <&kp GRAVE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LGUI|MOD_RGUI)>;
         };
     };
 
@@ -131,7 +139,7 @@
         spotlight {
             bindings = <&kp LG(SPACE)>;
             key-positions = <3 4>;
-            layers = <4>;
+            layers = <5>;
         };
 
         win_start {
@@ -143,7 +151,7 @@
         screenshot_mac {
             bindings = <&kp LS(LG(NUMBER_4))>;
             key-positions = <2 3>;
-            layers = <4>;
+            layers = <5>;
         };
 
         screenshot_win {
@@ -155,25 +163,25 @@
         play_pause {
             bindings = <&kp C_PLAY_PAUSE>;
             key-positions = <6 7>;
-            layers = <4 5>;
+            layers = <5 5>;
         };
 
         mute {
             bindings = <&kp K_MUTE>;
             key-positions = <7 8>;
-            layers = <4 5>;
+            layers = <5 5>;
         };
 
         volume_decrease {
             bindings = <&kp C_VOLUME_DOWN>;
             key-positions = <8 9>;
-            layers = <4 5>;
+            layers = <5 5>;
         };
 
         volume_increase {
             bindings = <&kp C_VOLUME_UP>;
             key-positions = <9 10>;
-            layers = <4 5>;
+            layers = <5 5>;
         };
     };
 
@@ -188,7 +196,7 @@
         to_win_focal: to_win_focal {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&tog_on 1 &tog_on 2 &tog_on 3>;
+            bindings = <&tog_on 1 &tog_on 3>;
             label = "TO_WIN_FOCAL";
         };
     };
@@ -196,26 +204,37 @@
     keymap {
         compatible = "zmk,keymap";
 
-        mac_qwerty_layer {
+        mac_focal_layer {
             bindings = <
-&kp ESCAPE       &kp Q  &kp W  &kp E                    &kp R                &kp T                                &kp Y        &kp U               &kp I        &kp O    &kp P     &kp BACKSLASH
-&mt GLOBE TAB    &kp A  &kp S  &kp D                    &kp F                &kp G                                &kp H        &my_mt J BACKSPACE  &kp K        &kp L    &kp SEMI  &kp SQT
-&mt LCTRL GRAVE  &kp Z  &kp X  &kp C                    &kp V                &kp B                                &kp N        &kp M               &kp COMMA    &kp DOT  &kp FSLH  &kp EQUAL
-                               &mt LEFT_ALT ENTER       &mt LEFT_GUI DELETE  &sk LEFT_SHIFT                       &lt 4 SPACE  &lt 6 MINUS         &lt 7 ENTER
+&my_gresc        &kp V           &kp L           &kp H               &kp G                &kp K             &my_mt Q SINGLE_QUOTE  &kp F        &kp O        &kp U      &kp J      &kp BACKSLASH
+&mt GLOBE TAB    &my_mt LG(A) S  &kp R           &kp N               &kp T                &kp B             &kp Y                  &kp C        &kp A        &kp E      &kp I      &kp SEMI
+&mt LCTRL GRAVE  &my_mt LG(Z) Z  &my_mt LG(X) X  &my_mt LG(C) M      &my_mt LG(V) D       &kp P             &bspc_del              &kp W        &comma_lpar  &dot_rpar  &kp SLASH  &kp EQUAL
+                                                 &mt LEFT_ALT ENTER  &mt LEFT_GUI DELETE  &sk LEFT_SHIFT    &lt 4 SPACE            &lt 6 MINUS  &lt 7 ENTER
+            >;
+
+            label = "FOCAL";
+        };
+
+        qwerty_layer {
+            bindings = <
+&trans  &kp Q  &kp W  &kp E   &kp R   &kp T     &kp Y   &kp U               &kp I      &kp O    &kp P     &kp BACKSLASH
+&trans  &kp A  &kp S  &kp D   &kp F   &kp G     &kp H   &my_mt J BACKSPACE  &kp K      &kp L    &kp SEMI  &kp SQT
+&trans  &kp Z  &kp X  &kp C   &kp V   &kp B     &kp N   &kp M               &kp COMMA  &kp DOT  &kp FSLH  &kp EQUAL
+                      &trans  &trans  &trans    &trans  &trans              &trans
             >;
 
             label = "QWERTY";
         };
 
-        focal_layer {
+        win_focal_layer {
             bindings = <
-&trans  &kp V           &kp L           &kp H           &kp G           &kp K     &my_mt Q SINGLE_QUOTE  &kp F   &kp O        &kp U      &kp J      &kp BACKSLASH
-&trans  &my_mt LG(A) S  &kp R           &kp N           &kp T           &kp B     &kp Y                  &kp C   &kp A        &kp E      &kp I      &kp SEMI
-&trans  &my_mt LG(Z) Z  &my_mt LG(X) X  &my_mt LG(C) M  &my_mt LG(V) D  &kp P     &bspc_del              &kp W   &comma_lpar  &dot_rpar  &kp SLASH  &kp EQUAL
-                                        &trans          &trans          &trans    &trans                 &trans  &trans
+&trans              &trans          &trans          &trans          &trans                   &trans    &trans       &trans  &trans  &trans  &trans  &trans
+&kp TAB             &my_mt LC(A) S  &trans          &trans          &trans                   &trans    &trans       &trans  &trans  &trans  &trans  &trans
+&mt LEFT_GUI GRAVE  &my_mt LC(Z) Z  &my_mt LC(X) X  &my_mt LC(C) M  &my_mt LC(V) D           &trans    &trans       &trans  &trans  &trans  &trans  &trans
+                                                    &trans          &mt LEFT_CONTROL DELETE  &trans    &lt 5 SPACE  &trans  &trans
             >;
 
-            label = "FOCAL";
+            label = "WIN_FOC";
         };
 
         win_layer {
@@ -227,17 +246,6 @@
             >;
 
             label = "WIN_QWE";
-        };
-
-        win_focal_layer {
-            bindings = <
-&trans  &trans          &trans          &trans          &trans          &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &my_mt LC(A) S  &trans          &trans          &trans          &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &my_mt LC(Z) Z  &my_mt LC(X) X  &my_mt LC(C) M  &my_mt LC(V) D  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                                        &trans          &trans          &trans    &trans  &trans  &trans
-            >;
-
-            label = "WIN_FOC";
         };
 
         mac_navigation_layer {
@@ -275,7 +283,7 @@
 
         fn_settings_layer {
             bindings = <
-&to 0           &to 1         &to 2         &to_win_focal  &none           &none              &none   &kp F1  &kp F2   &kp F3   &kp F4   &none
+&to 0           &to 1         &to 4         &to_win_focal  &none           &none              &none   &kp F1  &kp F2   &kp F3   &kp F4   &none
 &trans          &out OUT_BLE  &out OUT_USB  &none          &rgb_ug RGB_ON  &rgb_ug RGB_OFF    &none   &kp F5  &kp F6   &kp F7   &kp F8   &none
 &bt BT_CLR_ALL  &bt BT_SEL 4  &bt BT_SEL 3  &bt BT_SEL 2   &bt BT_SEL 1    &bt BT_SEL 0       &none   &kp F9  &kp F10  &kp F11  &kp F12  &none
                                             &trans         &trans          &trans             &trans  &trans  &trans
