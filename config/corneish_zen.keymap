@@ -251,15 +251,15 @@
             label = "FOCAL";
         };
 
-        gaudium_layer {
+        mac_figure_layer {
             bindings = <
-&trans  &kp B           &kp C           &kp L           &kp D           &kp Q     &kp SLASH       &kp U        &kp O            &kp Y      &kp J  &kp Z
-&trans  &my_mt LG(A) N  &kp S           &kp R           &kp T           &kp M     &kp APOSTROPHE  &kp E        &kp A            &kp I      &kp H  &kp SEMI
-&trans  &my_mt LG(Z) P  &my_mt LG(X) V  &my_mt LG(C) W  &my_mt LG(V) K  &kp G     &kp BSPC        &kp MINUS    &comma_lpar      &dot_rpar  &kp F  &kp X
-                                        &trans          &trans          &trans    &lt 4 SPACE     &lt 7 EQUAL  &lt 8 BACKSLASH
+&trans  &kp X           &kp W           &kp H           &kp G           &kp Q     &kp FSLH     &kp U               &kp O            &kp Y      &kp J  &kp Z
+&trans  &my_mt LG(A) S  &kp R           &kp N           &kp T           &kp K     &kp MINUS    &kp E               &kp A            &kp I      &kp C  &kp V
+&trans  &my_mt LG(Z) F  &my_mt LG(X) L  &my_mt LG(C) M  &my_mt LG(V) D  &kp B     &kp BSPC     &kp EQUAL           &comma_lpar      &dot_rpar  &kp P  &kp SEMI
+                                        &trans          &trans          &trans    &lt 4 SPACE  &lt 7 SINGLE_QUOTE  &lt 8 BACKSLASH
             >;
 
-            label = "GAUDIUM";
+            label = "FIGURE";
         };
 
         win_focal_layer {
@@ -270,10 +270,10 @@
                                                     &trans          &mt LEFT_CONTROL DELETE  &trans    &lt 5 SPACE  &trans  &trans
             >;
 
-            label = "WIN_FOC";
+            label = "W_FOCAL";
         };
 
-        win_layer {
+        win_figure_layer {
             bindings = <
 &trans              &trans  &trans  &trans  &trans            &trans    &trans       &trans  &trans  &trans  &trans  &trans
 &kp TAB             &trans  &trans  &trans  &trans            &trans    &trans       &trans  &trans  &trans  &trans  &trans
@@ -281,7 +281,7 @@
                                     &trans  &mt LCTRL DELETE  &trans    &lt 5 SPACE  &trans  &trans
             >;
 
-            label = "WIN_QWE";
+            label = "W_FIGURE";
         };
 
         mac_navigation_layer {
@@ -322,7 +322,7 @@
             bindings = <
 &trans       &kp DOLLAR  &kp HASH      &kp AT     &kp EXCLAMATION  &none                   &none                  &kp N5  &kp N6  &kp N7   &kp N8        &none
 &kp PERCENT  &kp SLASH   &kp ASTERISK  &kp MINUS  &kp PLUS         &kp LEFT_PARENTHESIS    &kp RIGHT_PARENTHESIS  &kp N1  &kp N2  &kp N3   &kp NUMBER_4  &none
-&trans       &kp TILDE   &kp CARET     &kp PIPE   &kp AMPERSAND    &none                   &kp BACKSPACE          &kp N9  &kp N0  &kp DOT  &kp EQUAL     &kp COMMA
+&trans       &kp TILDE   &kp CARET     &kp PIPE   &kp AMPERSAND    &kp BACKSLASH           &kp BACKSPACE          &kp N9  &kp N0  &kp DOT  &kp EQUAL     &kp COMMA
                                        &trans     &trans           &mt LEFT_SHIFT SPACE    &trans                 &trans  &trans
             >;
         };
