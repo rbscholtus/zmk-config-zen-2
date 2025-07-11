@@ -139,85 +139,85 @@
         spotlight {
             bindings = <&kp LG(SPACE)>;
             key-positions = <3 4>;
-            layers = <4>;
+            layers = <2>;
         };
 
         win_start {
             bindings = <&kp LEFT_GUI>;
             key-positions = <3 4>;
-            layers = <5>;
+            layers = <3>;
         };
 
         screenshot_mac {
             bindings = <&kp LS(LG(NUMBER_4))>;
             key-positions = <2 3>;
-            layers = <4>;
+            layers = <2>;
         };
 
         screenshot_win {
             bindings = <&kp LS(LG(S))>;
             key-positions = <2 3>;
-            layers = <5>;
+            layers = <3>;
         };
 
         play_pause {
             bindings = <&kp C_PLAY_PAUSE>;
             key-positions = <6 7>;
-            layers = <4 5>;
+            layers = <2 3>;
         };
 
         mute {
             bindings = <&kp K_MUTE>;
             key-positions = <7 8>;
-            layers = <4 5>;
+            layers = <2 3>;
         };
 
         volume_decrease {
             bindings = <&kp C_VOLUME_DOWN>;
             key-positions = <8 9>;
-            layers = <4 5>;
+            layers = <2 3>;
         };
 
         volume_increase {
             bindings = <&kp C_VOLUME_UP>;
             key-positions = <9 10>;
-            layers = <4 5>;
+            layers = <2 3>;
         };
 
         lbrc {
             bindings = <&kp LEFT_BRACE>;
             key-positions = <3 4>;
-            layers = <7>;
+            layers = <5>;
         };
 
         rbrc {
             bindings = <&kp RIGHT_BRACE>;
             key-positions = <7 8>;
-            layers = <7>;
+            layers = <5>;
         };
 
         lbrk {
             bindings = <&kp LEFT_BRACKET>;
             key-positions = <15 16>;
-            layers = <7>;
+            layers = <5>;
         };
 
         rbrk {
             bindings = <&kp RIGHT_BRACKET>;
             key-positions = <19 20>;
-            layers = <7>;
+            layers = <5>;
         };
 
         labr {
             bindings = <&kp LESS_THAN>;
             key-positions = <27 28>;
-            layers = <7>;
+            layers = <5>;
         };
 
         rabr {
             bindings = <&kp GREATER_THAN>;
             key-positions = <31 32>;
-            layers = <7>;
+            layers = <5>;
         };
     };
 
@@ -228,13 +228,6 @@
             bindings = <&macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "MY_KP_MACRO";
         };
-
-        to_win_gaudium: to_win_focal {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&tog_on 1 &tog_on 3>;
-            label = "TO_WIN_FOCAL";
-        };
     };
 
     keymap {
@@ -244,22 +237,11 @@
             bindings = <
 &kp ESC          &kp V           &kp L           &kp H               &kp G                &kp K             &my_mt Q SINGLE_QUOTE  &kp F        &kp O        &kp U      &kp J      &kp BACKSLASH
 &mt GLOBE TAB    &my_mt LG(A) S  &kp R           &kp N               &kp T                &kp B             &kp Y                  &kp C        &kp A        &kp E      &kp I      &kp SEMI
-&mt LCTRL GRAVE  &my_mt LG(Z) Z  &my_mt LG(X) X  &my_mt LG(C) M      &my_mt LG(V) D       &kp P             &kp BACKSPACE          &kp W        &comma_lpar  &dot_rpar  &kp SLASH  &kp EQUAL
-                                                 &mt LEFT_ALT ENTER  &mt LEFT_GUI DELETE  &sk LEFT_SHIFT    &lt 4 SPACE            &lt 6 MINUS  &lt 8 ENTER
+&mt LCTRL GRAVE  &my_mt LG(Z) Z  &my_mt LG(X) X  &my_mt LG(C) M      &my_mt LG(V) D       &kp P             &bspc_del              &kp W        &comma_lpar  &dot_rpar  &kp SLASH  &kp EQUAL
+                                                 &mt LEFT_ALT ENTER  &mt LEFT_GUI DELETE  &sk LEFT_SHIFT    &lt 2 SPACE            &lt 5 MINUS  &lt 6 ENTER
             >;
 
             label = "FOCAL";
-        };
-
-        mac_figure_layer {
-            bindings = <
-&trans  &kp W           &kp L           &kp H           &kp G           &kp K     &kp FSLH     &kp U               &kp O            &kp Y      &kp B  &kp Z
-&trans  &my_mt LG(A) S  &kp R           &kp N           &kp T           &kp P     &kp MINUS    &kp E               &kp A            &kp I      &kp C  &kp Q
-&trans  &my_mt LG(Z) V  &my_mt LG(X) X  &my_mt LG(C) M  &my_mt LG(V) D  &kp J     &kp BSPC     &kp EQUAL           &comma_lpar      &dot_rpar  &kp F  &kp SEMI
-                                        &trans          &trans          &trans    &lt 4 SPACE  &lt 7 SINGLE_QUOTE  &lt 8 BACKSLASH
-            >;
-
-            label = "FIGURE";
         };
 
         win_focal_layer {
@@ -267,28 +249,17 @@
 &trans              &trans          &trans          &trans          &trans                   &trans    &trans       &trans  &trans  &trans  &trans  &trans
 &kp TAB             &my_mt LC(A) S  &trans          &trans          &trans                   &trans    &trans       &trans  &trans  &trans  &trans  &trans
 &mt LEFT_GUI GRAVE  &my_mt LC(Z) Z  &my_mt LC(X) X  &my_mt LC(C) M  &my_mt LC(V) D           &trans    &trans       &trans  &trans  &trans  &trans  &trans
-                                                    &trans          &mt LEFT_CONTROL DELETE  &trans    &lt 5 SPACE  &trans  &trans
+                                                    &trans          &mt LEFT_CONTROL DELETE  &trans    &lt 3 SPACE  &trans  &trans
             >;
 
             label = "W_FOCAL";
-        };
-
-        win_figure_layer {
-            bindings = <
-&trans              &trans  &trans  &trans  &trans            &trans    &trans       &trans  &trans  &trans  &trans  &trans
-&kp TAB             &trans  &trans  &trans  &trans            &trans    &trans       &trans  &trans  &trans  &trans  &trans
-&mt LEFT_WIN GRAVE  &trans  &trans  &trans  &trans            &trans    &trans       &trans  &trans  &trans  &trans  &trans
-                                    &trans  &mt LCTRL DELETE  &trans    &lt 5 SPACE  &trans  &trans
-            >;
-
-            label = "W_FIGURE";
         };
 
         mac_navigation_layer {
             bindings = <
 &trans  &none  &mkp MB1        &mmv MOVE_UP    &mkp MB2         &msc SCRL_DOWN    &kp LA(UP_ARROW)    &kp LA(LEFT)  &kp UP_ARROW  &kp LA(RIGHT)  &kp LG(UP_ARROW)    &none
 &trans  &none  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_UP      &kp LA(DOWN_ARROW)  &kp LEFT      &kp DOWN      &kp RIGHT      &kp LG(DOWN_ARROW)  &none
-&trans  &none  &none           &none           &none            &none             &kp DEL             &kp LG(LEFT)  &none         &kp LG(RIGHT)  &none               &none
+&trans  &none  &none           &none           &none            &none             &none               &kp LG(LEFT)  &none         &kp LG(RIGHT)  &none               &none
                                &trans          &trans           &trans            &trans              &trans        &trans
             >;
 
@@ -299,11 +270,11 @@
             bindings = <
 &trans  &none  &mkp MB1        &mmv MOVE_UP    &mkp MB2         &msc SCRL_DOWN    &kp PAGE_UP    &kp LC(LEFT)  &kp UP_ARROW  &kp LC(RIGHT)  &kp LC(HOME)  &none
 &trans  &none  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_UP      &kp PAGE_DOWN  &kp LEFT      &kp DOWN      &kp RIGHT      &kp LC(END)   &none
-&trans  &none  &none           &none           &none            &none             &kp DEL        &kp HOME      &none         &kp END        &none         &none
+&trans  &none  &none           &none           &none            &none             &none          &kp HOME      &none         &kp END        &none         &none
                                &trans          &trans           &trans            &trans         &trans        &trans
             >;
 
-            label = "WIN_NAV";
+            label = "W_NAV";
         };
 
         num_sym_layer {
@@ -322,17 +293,17 @@
             bindings = <
 &kp GRAVE    &kp DOLLAR  &kp HASH      &kp AT     &kp EXCLAMATION  &none                   &none                  &kp N5  &kp N6  &kp N7   &kp N8        &none
 &kp PERCENT  &kp SLASH   &kp ASTERISK  &kp MINUS  &kp PLUS         &kp LEFT_PARENTHESIS    &kp RIGHT_PARENTHESIS  &kp N1  &kp N2  &kp N3   &kp NUMBER_4  &none
-&trans       &kp TILDE   &kp CARET     &kp PIPE   &kp AMPERSAND    &kp BACKSLASH           &kp BACKSPACE          &kp N9  &kp N0  &kp DOT  &kp EQUAL     &kp COMMA
+&trans       &kp TILDE   &kp CARET     &kp PIPE   &kp AMPERSAND    &kp BACKSLASH           &bspc_del              &kp N9  &kp N0  &kp DOT  &kp EQUAL     &kp COMMA
                                        &trans     &trans           &mt LEFT_SHIFT SPACE    &trans                 &trans  &trans
             >;
         };
 
         fn_settings_layer {
             bindings = <
-&to 0           &to 1         &to 2         &to_win_gaudium  &none           &none              &none   &kp F5  &kp F6   &kp F7   &kp F8   &none
-&none           &out OUT_BLE  &out OUT_USB  &none            &rgb_ug RGB_ON  &rgb_ug RGB_OFF    &none   &kp F1  &kp F2   &kp F3   &kp F4   &none
-&bt BT_CLR_ALL  &bt BT_SEL 4  &bt BT_SEL 3  &bt BT_SEL 2     &bt BT_SEL 1    &bt BT_SEL 0       &none   &kp F9  &kp F10  &kp F11  &kp F12  &none
-                                            &trans           &trans          &trans             &trans  &trans  &trans
+&to 0           &to 1         &none         &none         &none           &none              &none   &kp F5  &kp F6   &kp F7   &kp F8   &none
+&none           &out OUT_BLE  &out OUT_USB  &none         &rgb_ug RGB_ON  &rgb_ug RGB_OFF    &none   &kp F1  &kp F2   &kp F3   &kp F4   &none
+&bt BT_CLR_ALL  &bt BT_SEL 4  &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1    &bt BT_SEL 0       &none   &kp F9  &kp F10  &kp F11  &kp F12  &none
+                                            &trans        &trans          &trans             &trans  &trans  &trans
             >;
 
             label = "FN_SETT";
