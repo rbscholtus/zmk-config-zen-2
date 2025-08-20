@@ -3,78 +3,12 @@
  *
  * SPDX-License-Identifier: MIT
  */
-
-#include <zmk/keys.h>
-#include <zmk/behavior.h>
-#include <zmk/event_manager.h>
-#include <zmk/events/position_state_changed.h>
-
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/rgb.h>
-## begin of UOF-YOU behavior
-// Configurable constants
-#define SEQUENCE_TIMEOUT_MS 100
-
-// Key sequence to activate the combo
-static const uint32_t sequence_keys[] = {KEY_Y, KEY_U, KEY_O};
-static uint8_t sequence_index = 0;
-static const uint8_t sequence_length = sizeof(sequence_keys) / sizeof(uint32_t);
-
-// Output keys once combo is activated
-static const uint32_t output_keys[] = {KEY_Y, KEY_O, KEY_U};
-static const uint8_t output_length = sizeof(output_keys) / sizeof(uint32_t);
-
-static struct k_timer sequence_timer;
-
-static void reset_sequence(struct k_timer *timer_id) {
-    sequence_index = 0;
-}
-
-static void send_key(uint32_t key_code) {
-    struct zmk_position_state_changed ev = {
-        .key = key_code,
-        .state = true,  // Key pressed
-    };
-    ZMK_EVENT_RAISE(new &ev);
-
-    ev.state = false; // Key released
-    ZMK_EVENT_RAISE(new &ev);
-}
-
-static void send_output_sequence() {
-    for (uint8_t i = 0; i < output_length; i++) {
-        send_key(output_keys[i]);
-    }
-}
-
-static int process_key_sequence(const struct zmk_position_state_changed *ev) {
-    if (ev->state) { // Key pressed
-        if (ev->key == sequence_keys[sequence_index]) {
-            sequence_index++;
-            k_timer_start(&sequence_timer, K_MSEC(SEQUENCE_TIMEOUT_MS), K_NO_WAIT); // Start/reset timer
-            if (sequence_index == sequence_length) {
-                send_output_sequence();
-                sequence_index = 0;
-            }
-        } else {
-            sequence_index = 0;
-            k_timer_stop(&sequence_timer);
-        }
-    }
-    return 0;
-}
-
-int my_custom_behavior_init() {
-    k_timer_init(&sequence_timer, reset_sequence, NULL);
-    zmk_event_manager_register(process_key_sequence);
-}
-
-SYS_INIT(my_custom_behavior_init, APPLICATION, CONFIG_APPLICATION_INIT_PRIORITY);
-## end of UOF-YOU behavior
 
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 1200  // default: 600
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // default: 10
