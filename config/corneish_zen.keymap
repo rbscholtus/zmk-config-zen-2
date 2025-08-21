@@ -3,12 +3,6 @@
  *
  * SPDX-License-Identifier: MIT
  */
-#include <behaviors.dtsi>
-#include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/outputs.h>
-#include <dt-bindings/zmk/pointing.h>
-#include <dt-bindings/zmk/rgb.h>
 
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 1200  // default: 600
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // default: 10
@@ -199,64 +193,71 @@
 &kp TAB                 &my_mt LC(A) S  &kp R           &kp N               &kp T                    &kp B             &kp Y        &kp C               &kp A        &kp E      &kp I     &kp SEMI
 &mt LEFT_GUI BACKSLASH  &my_mt LC(Z) Z  &my_mt LC(X) X  &my_mt LC(C) M      &my_mt LC(V) D           &kp P             &bspc_del    &kp W               &comma_lpar  &dot_rpar  &kp FSLH  &kp EQUAL
                                                         &mt LEFT_ALT ENTER  &mt LEFT_CONTROL DELETE  &sk LEFT_SHIFT    &lt 3 SPACE  &lt 5 SINGLE_QUOTE  &lt 6 ENTER
->;
+            >;
 
             label = "W_FOCAL";
         };
-win_focal_mod3 {
-         label = "W_FCL3";
-         bindings = <
+
+        win_focal_mod3 {
+            label = "W_FCL3";
+            bindings = <
 &kp ESC                 &kp W           &kp L           &kp H               &kp K                    &kp Q             &kp EQUAL    &kp O               &kp U        &kp Y      &kp Z  &kp MINUS
 &kp TAB                 &my_mt LC(A) S  &kp R           &kp N               &kp T                    &kp F             &kp SEMI     &kp A               &kp E        &kp I      &kp C  &kp P
-&mt LEFT_GUI BACKSLASH  &my_mt LC(Z) Z  &my_mt LC(X) X  &my_mt LC(C) M      &my_mt LC(V) D           &kp B             &bspc_del    &comma_lpar         &kp FSLH     &dot_rpar  &kp G  &kp J
+&mt LEFT_GUI BACKSLASH  &my_mt LC(Z) V  &my_mt LC(X) X  &my_mt LC(C) M      &my_mt LC(V) D           &kp B             &bspc_del    &comma_lpar         &kp FSLH     &dot_rpar  &kp G  &kp J
                                                         &mt LEFT_ALT ENTER  &mt LEFT_CONTROL DELETE  &sk LEFT_SHIFT    &lt 3 SPACE  &lt 5 SINGLE_QUOTE  &lt 6 ENTER
->;};
-mac_focal_layer {
+            >;
+        };
+
+        mac_focal_layer {
             bindings = <
 &kp ESC              &kp V           &kp L           &kp H               &kp G                &kp K             &kp Q        &kp F               &kp O        &kp U      &kp J      &kp MINUS
 &mt GLOBE TAB        &my_mt LG(A) S  &kp R           &kp N               &kp T                &kp B             &kp Y        &kp C               &kp A        &kp E      &kp I      &kp SEMI
 &mt LCTRL BACKSLASH  &my_mt LG(Z) Z  &my_mt LG(X) X  &my_mt LG(C) M      &my_mt LG(V) D       &kp P             &bspc_del    &kp W               &comma_lpar  &dot_rpar  &kp SLASH  &kp EQUAL
                                                      &mt LEFT_ALT ENTER  &mt LEFT_GUI DELETE  &sk LEFT_SHIFT    &lt 4 SPACE  &lt 5 SINGLE_QUOTE  &lt 6 ENTER
->;
+            >;
 
             label = "FOCAL";
         };
-win_navigation_layer {
+
+        win_navigation_layer {
             bindings = <
 &trans  &none  &mkp MB1        &mmv MOVE_UP    &mkp MB2         &msc SCRL_DOWN    &kp PAGE_UP    &kp LC(LEFT)  &kp UP_ARROW  &kp LC(RIGHT)  &kp LC(HOME)  &none
 &trans  &none  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_UP      &kp PAGE_DOWN  &kp LEFT      &kp DOWN      &kp RIGHT      &kp LC(END)   &none
 &trans  &none  &none           &none           &none            &none             &none          &kp HOME      &none         &kp END        &none         &none
                                &trans          &trans           &trans            &trans         &trans        &trans
->;
+            >;
 
             label = "W_NAV";
         };
-mac_navigation_layer {
+
+        mac_navigation_layer {
             bindings = <
 &trans  &none  &mkp MB1        &mmv MOVE_UP    &mkp MB2         &msc SCRL_DOWN    &kp PAGE_UP    &kp LA(LEFT)  &kp UP_ARROW  &kp LA(RIGHT)  &kp LG(UP_ARROW)    &none
 &trans  &none  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_UP      &kp PAGE_DOWN  &kp LEFT      &kp DOWN      &kp RIGHT      &kp LG(DOWN_ARROW)  &none
 &trans  &none  &none           &none           &none            &none             &bspc_del      &kp LG(LEFT)  &none         &kp LG(RIGHT)  &none               &none
                                &trans          &trans           &trans            &trans         &trans        &trans
->;
+            >;
 
             label = "NAV";
         };
-num_sym_layer {
+
+        num_sym_layer {
             label = "NUM_SYM";
             bindings = <
 &kp GRAVE    &kp DOLLAR  &kp HASH      &kp AT     &kp EXCLAMATION  &kp LEFT_BRACKET        &kp RIGHT_BRACKET  &kp N5  &kp N6        &kp N7     &kp N8        &kp MINUS
 &kp PERCENT  &kp SLASH   &kp ASTERISK  &kp MINUS  &kp PLUS         &kp LEFT_BRACE          &kp RIGHT_BRACE    &kp N1  &kp N2        &kp N3     &kp NUMBER_4  &kp SEMICOLON
 &trans       &kp TILDE   &kp CARET     &kp PIPE   &kp AMPERSAND    &none                   &bspc_del          &kp N9  &kp NUMBER_0  &kp COMMA  &kp DOT       &kp EQUAL
                                        &trans     &trans           &mt LEFT_SHIFT SPACE    &trans             &trans  &trans
->;
+            >;
         };
-fn_settings_layer {
+
+        fn_settings_layer {
             bindings = <
 &to 0           &to 1         &to 2         &none         &none         &rgb_ug RGB_ON     &none   &kp F5  &kp F6   &kp F7   &kp F8   &none
 &none           &out OUT_BLE  &out OUT_USB  &none         &none         &rgb_ug RGB_OFF    &none   &kp F1  &kp F2   &kp F3   &kp F4   &none
 &bt BT_CLR_ALL  &bt BT_SEL 4  &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0       &none   &kp F9  &kp F10  &kp F11  &kp F12  &none
                                             &trans        &trans        &trans             &trans  &trans  &trans
->;
+            >;
 
             label = "FN_SETT";
         };
