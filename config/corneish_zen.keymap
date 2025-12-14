@@ -32,7 +32,7 @@
 };
 
 &sk {
-    release-after-ms = <2000>;
+    release-after-ms = <800>;
     quick-release;
 };
 
